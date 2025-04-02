@@ -6,6 +6,7 @@
   background: #ffffff;
   height: 1024px;
   position: relative;
+  max-width: 100vw;
 }
 .group-8 {
   position: absolute;
@@ -30,7 +31,7 @@
   position: absolute;
   left: 50%;
   translate: -50%;
-  top: calc(50% - 225px);
+  top: calc(50% - 215px);
 }
 .live-vote-tally {
   color: #5c5c5c;
@@ -51,16 +52,16 @@
   width: 264.49px;
   height: 100px;
   position: absolute;
-  left: calc(50% - 690px);
+  left: calc(50% - 670px);
   top: calc(50% - 361px);
   object-fit: cover;
   aspect-ratio: 264.49/100;
 }
 .e-1 {
-  width: 178.5px;
+  width: 105px;
   height: 105px;
   position: absolute;
-  left: calc(50% - -521px);
+  left: calc(50% - -550px);
   top: calc(50% - 361px);
   object-fit: cover;
   aspect-ratio: 178.5/105;
@@ -72,23 +73,23 @@
   font-size: 14px;
   font-weight: 300;
   position: absolute;
-  left: calc(50% - -278px);
+  left: calc(50% - -230px);
   top: calc(50% - 444px);
   width: 432px;
-  height: 37px;
+  height: 37px; 
 }
 .rectangle-475 {
-  width: 1440px;
+  width: 100vw;
   height: 289px;
   position: absolute;
   left: 50%;
   translate: -50%;
   top: calc(50% - -508px);
-  overflow: visible;
+  overflow: hidden;
 }
 .rectangle-17 {
   background: #d9d9d9;
-  width: 1440px;
+  width: 100vw;
   height: 55px;
   position: absolute;
   left: 50%;
@@ -97,7 +98,7 @@
 }
 .image-36 {
   opacity: 0.7;
-  width: 1316px;
+  width: 100vw;
   height: 686px;
   position: absolute;
   left: 50%;
@@ -113,7 +114,7 @@
 }
 .rectangle-476 {
   background: #969393;
-  width: 1323px;
+  width: calc(100vw - 3.5vw);
   height: 80px;
   position: absolute;
   left: calc(50% - 660px);
@@ -131,13 +132,25 @@
   translate: -50%;
   top: calc(50% - 63px);
 }
-.group-45 {
+.line {
+  display: block;
+  text-align: left;
+  left: 10px;
+}
+.group-45-close-overlay {
+  width: 40px;
+  height: 33px;
+  position: absolute;
+  overflow: hidden;
+  margin-top: 5px;
+}
+.group-45-open-overlay {
   width: 40px;
   height: 33px;
   position: absolute;
   left: calc(50% - 633px);
   top: calc(50% - 58px);
-  overflow: visible;
+  overflow: hidden;
 }
 .group-47 {
   position: absolute;
@@ -155,13 +168,23 @@
   top: calc(50% - -28px);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.rectangle-481 {
-  width: 10px;
+.rectangle-481-president {
+  width: 17px;
   height: 75px;
   position: absolute;
+  background: #2D4B80;
   left: calc(50% - 325px);
   top: calc(50% - -43px);
-  overflow: visible;
+  overflow: hidden;
+}
+.rectangle-481-vice-president {
+  width: 315px;
+  height: 75px;
+  position: absolute;
+  background: #2D4B80;
+  left: calc(50% - 325px);
+  top: calc(50% - -43px);
+  overflow: hidden;
 }
 .rectangle-531 {
   width: 75px;
@@ -169,7 +192,7 @@
   position: absolute;
   left: calc(50% - -550px);
   top: calc(50% - -47px);
-  overflow: visible;
+  overflow: hidden;
 }
 .rectangle-489 {
   width: 277px;
@@ -177,7 +200,7 @@
   position: absolute;
   left: calc(50% - 627px);
   top: calc(50% - -43px);
-  overflow: visible;
+  overflow: hidden;
 }
 .line-4 {
   margin-top: -1px;
@@ -242,13 +265,23 @@
   top: calc(50% - -158px);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.rectangle-4812 {
-  width: 10px;
+.rectangle-4812-president {
+  width: 315px;
   height: 75px;
   position: absolute;
+  background: #9c1418;
   left: calc(50% - 325px);
   top: calc(50% - -173px);
-  overflow: visible;
+  overflow: hidden;
+}
+.rectangle-4812-vice-president {
+  width: 179px;
+  height: 75px;
+  position: absolute;
+  background: #9c1418;
+  left: calc(50% - 325px);
+  top: calc(50% - -173px);
+  overflow: hidden;
 }
 .rectangle-5312 {
   width: 75px;
@@ -256,7 +289,7 @@
   position: absolute;
   left: calc(50% - -550px);
   top: calc(50% - -177px);
-  overflow: visible;
+  overflow: hidden;
 }
 .rectangle-4892 {
   width: 277px;
@@ -264,7 +297,7 @@
   position: absolute;
   left: calc(50% - 627px);
   top: calc(50% - -173px);
-  overflow: visible;
+  overflow: hidden;
 }
 .line-42 {
   margin-top: -1px;
@@ -329,13 +362,23 @@
   top: calc(50% - -288px);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
-.rectangle-4813 {
-  width: 10px;
+.rectangle-4813-president {
+  width: 619px;
   height: 75px;
   position: absolute;
+  background: #b5af00;
   left: calc(50% - 325px);
   top: calc(50% - -303px);
-  overflow: visible;
+  overflow: hidden;
+}
+.rectangle-4813-vice-president {
+  width: 357px;
+  height: 75px;
+  position: absolute;
+  background: #b5af00;
+  left: calc(50% - 325px);
+  top: calc(50% - -303px);
+  overflow: hidden;
 }
 .rectangle-5313 {
   width: 75px;
@@ -343,7 +386,7 @@
   position: absolute;
   left: calc(50% - -550px);
   top: calc(50% - -307px);
-  overflow: visible;
+  overflow: hidden;
 }
 .rectangle-4893 {
   width: 277px;
@@ -351,7 +394,7 @@
   position: absolute;
   left: calc(50% - 627px);
   top: calc(50% - -303px);
-  overflow: visible;
+  overflow: hidden;
 }
 .line-43 {
   margin-top: -1px;
@@ -470,7 +513,7 @@
   font-size: 24px;
   font-weight: 400;
   position: absolute;
-  left: calc(50% - 389px);
+  left: calc(50% - 345px);
   top: calc(50% - -580px);
 }
 .group-52 {
@@ -532,24 +575,34 @@
   left: calc(50% - -298px);
   top: calc(50% - -531px);
 }
-._0-000-0003 {
+._0-000-0003-president {
   color: #ffffff;
   text-align: center;
   font-family: "Montserrat-Regular", sans-serif;
   font-size: 24px;
   font-weight: 400;
   position: absolute;
-  left: calc(50% - -267px);
+  left: calc(50% - -300px);
+  top: calc(50% - -580px);
+}
+._0-000-0003-vice-president {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Montserrat-Regular", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  position: absolute;
+  left: calc(50% - -310px);
   top: calc(50% - -580px);
 }
 .group-28 {
-  width: 1441px;
+  width: 100vw;
   height: 174.37px;
   position: static;
 }
 .rectangle-5 {
   background: #737373;
-  width: 1441px;
+  width: 100vw;
   height: 174.37px;
   position: absolute;
   left: 50%;
@@ -574,4 +627,4 @@
   bottom: -412px;
   object-fit: cover;
   aspect-ratio: 119/140;
-}
+} 
