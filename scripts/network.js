@@ -5,7 +5,6 @@ const votingContract = new web3.eth.Contract(contractABI, contractAddress);
 if (typeof window.ethereum !== 'undefined') {
     window.web3 = new Web3(window.ethereum);
     try {
-        // Request account access if needed
         await window.ethereum.enable();
     } catch (error) {
         console.error("User denied account access");
@@ -15,8 +14,8 @@ if (typeof window.ethereum !== 'undefined') {
 }
 
 async function displayVoteCounts(candidateAddresses) {
-    const resultsTable = document.getElementById('resultsTable'); // Ensure you have a table with this ID in your HTML
-    resultsTable.innerHTML = ''; // Clear existing entries
+    const resultsTable = document.getElementById('resultsTable');
+    resultsTable.innerHTML = '';
 
     for (const address of candidateAddresses) {
         try {

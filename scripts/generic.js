@@ -26,8 +26,6 @@ function updateDateTime() {
       document.getElementById("datetime").textContent = now.toLocaleDateString('en-US', options);
   }
 
-setInterval(updateDateTime, 1000);
-
 async function loadYAML(pos) {
   try {
     const response = await fetch('datasheet.yml');
@@ -36,21 +34,26 @@ async function loadYAML(pos) {
     if (cur == pos) {
       cur = pos;
     }
-    if (pos == 'president') {
-      for (let i = 1; i < 4; i++) {
-        document.getElementById("candidate_"+ i + "_name").innerHTML = data["president"].candidates[i - 1].name + "<br/>";
-        document.getElementById("candidate_" + i + "_partylist").innerHTML = data["president"].candidates[i - 1].partylist + "<br/>";
+    for (position in data.position) {
+      if (pos == position) {
+        for (let i = 1; i < 4; i++) {
+          document.getElementById("candidate_"+ i + "_name").innerHTML = data.position[position].candidates[i - 1].name + "<br/>";
+          document.getElementById("candidate_" + i + "_partylist").innerHTML = data.position[position].candidates[i - 1].partylist + "<br/>";
+        }
       }
     }
-    else if (pos == 'vice-president') {
+    if (pos == "partylist") {
       for (let i = 1; i < 4; i++) {
-        document.getElementById("candidate_"+ i + "_name").innerHTML = data["vice-president"].candidates[i - 1].name + "<br/>";
-        document.getElementById("candidate_" + i + "_partylist").innerHTML = data["vice-president"].candidates[i - 1].partylist + "<br/>";
+        document.getElementById("candidate_"+ i + "_name").innerHTML = data.partylists[i - 1] + "<br/>";
+        document.getElementById("candidate_" + i + "_partylist").innerHTML = "Total Count";
       }
     }
   } catch (error) {
     console.error('Error loading YAML:', error);
   }
+  updateDateTime();
+  console.log("Data has been updated.");
 }
 
+loadYAML("partylist");
 setInterval(loadYAML, 5000);
