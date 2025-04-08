@@ -16,3 +16,107 @@ vice-president:
       partylist: "Republican (GOP)"
     - name: "Jade Dela Cruz"
       partylist: "Independent (IND)"
+secretary:
+  candidates:
+    - name: "Miguel Sann"
+      partylist: "Democratic (DEM)" 
+    - name: "Tinna Pangan"
+      partylist: "Republican (GOP)"
+    - name: "Mona Lupa"
+      partylist: "Independent (IND)"
+assistant-secretary:
+  candidates:
+    - name: "Ella Ganado"
+      partylist: "Democratic (DEM)" 
+    - name: "Ben Tuwing"
+      partylist: "Republican (GOP)"
+    - name: "Harry Vonn"
+      partylist: "Independent (IND)"
+treasurer:
+  candidates:
+    - name: "Al Beback"
+      partylist: "Democratic (DEM)" 
+    - name: "Justin Time"
+      partylist: "Republican (GOP)"
+    - name: "Sal Monella"
+      partylist: "Independent (IND)"
+assistant-treasurer:
+  candidates:
+    - name: "Benn Dover"
+      partylist: "Democratic (DEM)" 
+    - name: "Bianca Navarro"
+      partylist: "Republican (GOP)"
+    - name: "Mike Rotch"
+      partylist: "Independent (IND)"
+auditor:
+  candidates:
+    - name: "Tina Turnip"
+      partylist: "Democratic (DEM)" 
+    - name: "Patt Myback"
+      partylist: "Republican (GOP)"
+    - name: "Dee Nial"
+      partylist: "Independent (IND)"
+public-relations-officer:
+  candidates:
+    - name: "Ram Bhutan"
+      partylist: "Democratic (DEM)" 
+    - name: "Ben Tador"
+      partylist: "Republican (GOP)"
+    - name: "Adrian Castillo"
+      partylist: "Independent (IND)"
+peace-and-order-officer:
+  candidates:
+    - name: "Danielle Morales"
+      partylist: "Democratic (DEM)" 
+    - name: "Elijah Cruz"
+      partylist: "Republican (GOP)"
+    - name: "Hannah Velasco"
+      partylist: "Independent (IND)"
+stem:
+  candidates:
+    - name: "Jasmine Gutierrez"
+      partylist: "Democratic (DEM)" 
+    - name: "Kyle Ramirez"
+      partylist: "Republican (GOP)"
+    - name: "Lara Aquino"
+      partylist: "Independent (IND)"
+abm:
+  candidates:
+    - name: "Marcus Villanueva"
+      partylist: "Democratic (DEM)" 
+    - name: "Nina Soriano"
+      partylist: "Republican (GOP)"
+    - name: "Oliver Sandoval"
+      partylist: "Independent (IND)"
+humss:
+  candidates:
+    - name: "Quentin Bautista"
+      partylist: "Democratic (DEM)" 
+    - name: "Rica Manalo"
+      partylist: "Republican (GOP)"
+    - name: "Samuel Abad"
+      partylist: "Independent (IND)"
+ict:
+  candidates:
+    - name: "Thalia Robles"
+      partylist: "Democratic (DEM)" 
+    - name: "Uri Mateo"
+      partylist: "Republican (GOP)"
+    - name: "William Torres"
+      partylist: "Independent (IND)"
+grade-9:
+  candidates:
+    - name: "Xyra Dominguez"
+      partylist: "Democratic (DEM)" 
+    - name: "Beatrice Cruzado"
+      partylist: "Republican (GOP)"
+    - name: "Cyrus Vergara"
+      partylist: "Independent (IND)"
+grade-10:
+  candidates:
+    - name: "Ethan Alonzo"
+      partylist: "Democratic (DEM)" 
+    - name: "Fiona Balagtas"
+      partylist: "Republican (GOP)"
+    - name: "Isko Barh"
+      partylist: "Independent (IND)"
