@@ -1,0 +1,18 @@
+# Listed below is the format for listing the candidates to their respective positions and partylist
+# If ever a candidate is running without a partylist register them as "Independent (IND)" for clearance
+president:
+  candidates:
+    - name: "Mary Piatos"
+      partylist: "Democratic (DEM)"
+    - name: "Leni Barbero"
+      partylist: "Republican (GOP)"
+    - name: "Iska Marino"
+      partylist: "Independent (IND)"
+vice-president:
+  candidates:
+    - name: "Erick Fronteras"
+      partylist: "Democratic (DEM)" 
+    - name: "Myle Medenilla"
+      partylist: "Republican (GOP)"
+    - name: "Jade Dela Cruz"
+      partylist: "Independent (IND)"

@@ -1,0 +1,5 @@
+/* Figma Styles of your File */
+:root {
+    --ol_font_size: clamp(10px, 1.25vw, 20px);
+  }
+  

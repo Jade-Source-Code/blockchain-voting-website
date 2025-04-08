@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="assets\eboto_logo.png">
-    <link rel="stylesheet" href="./vars.css" />
-    <link rel="stylesheet" href="./style.css" />
-    <script src="scripts\general.js" defer></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="assets\logo-emblem\eboto_logo.png">
+    <link rel="stylesheet" href="stylesheets\vars.css" />
+    <link rel="stylesheet" href="stylesheets\style.css" />
+    <script src="scripts\generic.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
 
     <style>
       a,
@@ -40,185 +41,147 @@
       }
       body {
         font-family: 'Lato', sans-serif;
-      }
-
-      .overlay {
-        height: 0px;
-        width: 240px;
-        right: 20px;
-        position: absolute;
-        left: calc(50% - 633px);
-        top: calc(50% - 20px);
-        overflow:hidden;
-        z-index: 1;
-        background-color: rgb(110, 110, 110);
         overflow-x: hidden;
-        transition: 0.3s;
-        box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-      }
-
-      .overlay-content {
-        position: relative;
-        top: 10px;
-        width: 50%;
-        text-align: left;
-        left: 5px;
-        white-space: nowrap;
-      }
-
-      .overlay a {
-        padding: 4px;
-        text-decoration: none;
-        font-size: 20px;
-        color: #ffffff;
-        display: block;
-        transition: 0.3s;
-      }
-
-      .overlay a:not(.closebtn):hover,
-.overlay a:not(.closebtn):focus {
-        display: inline-block;
-        padding: 0px;
-        margin: 5px 0;
-        border: 2px solid #ff0000;
-        font-size: 25px;
-        text-decoration: none;
-        color: rgb(255, 255, 255);
-      }
-
-      .overlay .closebtn {  
-        position: absolute;
-        top: 0px;
-        left: 5px;
-        font-size: 20px;
-      }
-      
-      .overlay .closebtn .group-45 {
-        width: 60px;
-        height: auto;
-        display: block;
-      }
-      
-      @media screen and (max-height: 450px) {
-        .overlay a {font-size: 20px}
-        .overlay .closebtn {  
-        font-size: 25px;
-        top: 5px;
-        right: 35px;
-        }
+        overflow-y: auto;
+        height: 100%;
       }
     </style>
     <title>eBoto Voting Result</title>
   </head>
   <body>
     <div class="main">
-      <div class="rectangle-16"></div>
-      <div class="_2025-ssg-general-elections">2025 SSG GENERAL ELECTIONS</div>
+      <div class="light_bar">
+        <div class="about-e-boto-mmcm">About eBoto: MMCM</div>
+        <div class="light_bar_box"></div>
+      </div>
+      <div class="top_emblems">
+        <img class="mmcm_emblem" src="assets\logo-emblem\mcm_emblem.png" />
+        <img class="eboto_emblem" src="assets\logo-emblem\eboto_logo.png" />
+      </div>
+      <div class="red_title">
+        <div class="red_title_box"></div>
+        <div class="_2025_ssg_general_elections">2025 SSG GENERAL ELECTIONS</div>
+      </div>
       <div class="live-vote-tally">Live Vote Tally</div>
-      <img class="yes-logo-1" src="assets\mcm_emblem.png" />
-      <img class="e-1" src="assets/eboto_logo.png" />
-      <div class="about-e-boto-mmcm" style="z-index: 1;">About eBoto: MMCM</div>
-      <img class="rectangle-475" src="assets\Rectangle 475.svg" />
-      <div class="rectangle-17"></div>
-      <img class="image-36" src="assets\bg_image.png" />
-      <div class="rectangle-476"></div>
-      <div class="position">Position</div>
-      <div class="image-container">
-        <img
-          class="group-45-open-overlay" src="assets/Group 45.svg" alt="Open" onclick="navToggle()" style="font-size:30px;cursor:pointer"/>
-        <div id="myNav" class="overlay">
-          </a>
-          <div class="overlay-content">
-            <a href="positions/president.html" class="line">President</a>
-            <a href="positions/vice-president.html" class="line">Vice-President</a>
-            <a href="index.html" class="line">Secretary</a>
-            <a href="index.html" class="line">Assist. Secretary</a>
-            <a href="index.html" class="line">Representatives</a>
+      <div class="nav_bar">
+        <div class="nav_bar_grey"></div>
+        <div class="position_text">Position</div>
+        <div class="nav_bar_button">
+          <img
+            class="nav_bar_icon" src="assets\misc\nav_bar_icon.svg" alt="Open" onclick="navToggle()" style="font-size:30px;cursor:pointer"/>
+          <div id="myNav" class="overlay">
+            <div class="overlay-content">
+              <a href="index.html" class="line">Party Lists</a>
+              <a onclick="loadYAML('president')" class="line">President</a>
+              <a onclick="loadYAML('vice-president')" class="line">Vice-President</a>
+              <a href="index.html" class="line">Secretary</a>
+              <a href="index.html" class="line">Asst. Secretary</a>
+              <a href="index.html" class="line">Treasurer</a>
+              <a href="index.html" class="line">Asst. Treasurer</a>
+              <a href="index.html" class="line">Auditor</a>
+              <a href="index.html" class="line">P-R Officer</a>
+              <a href="index.html" class="line">P-O Officer</a>
+              <a href="index.html" class="line">STEM</a>
+              <a href="index.html" class="line">ABM</a>
+              <a href="index.html" class="line">HUMSS</a>
+              <a href="index.html" class="line">ICT</a>
+              <a href="index.html" class="line">Grade 9</a>
+              <a href="index.html" class="line">Grade 10</a>
+            </div>
           </div>
         </div>
       </div>
-      <div class="rectangle-532"></div>
-      <img class="rectangle-481-president"/>
-      <img class="rectangle-531" src="assets\Rectangle 531.svg" />
-      <img class="rectangle-489" src="assets\Rectangle 489.svg" />
-      <div class="line-4"></div>
-      <div class="candidate-name-party-name-prt">
-        <span>
-          <span class="candidate-name-party-name-prt-span">
-            Candidate Name
-            <br />
-          </span>
-          <span class="candidate-name-party-name-prt-span2"
-            >Party Name (PRT)</span
-          >
-        </span>
-      </div>
-      <div class="_0">0%</div>
-      <div class="rectangle-5322"></div>
-      <img class="rectangle-4812-president"/>
-      <img class="rectangle-5312" src="assets\Rectangle 531 (1).svg" />
-      <img class="rectangle-4892" src="assets\Rectangle 489 (1).svg" />
-      <div class="line-42"></div>
-      <div class="candidate-name-party-name-prt2">
-        <span>
-          <span class="candidate-name-party-name-prt-2-span">
-            Candidate Name
-            <br />
-          </span>
-          <span class="candidate-name-party-name-prt-2-span2">
-            Party Name (PRT)
-          </span>
-        </span>
-      </div>
-      <div class="_02">0%</div>
-      <div class="rectangle-5323"></div>
-      <img class="rectangle-4813-president"/>
-      <img class="rectangle-5313" src="assets\Rectangle 531 (2).svg" />
-      <img class="rectangle-4893" src="assets\Rectangle 489 (2).svg" />
-      <div class="line-43"></div>
-      <div class="candidate-name-party-name-prt3">
-        <span>
-          <span class="candidate-name-party-name-prt-3-span">
-            Candidate Name
-            <br />
-          </span>
-          <span class="candidate-name-party-name-prt-3-span2">
-            Party Name (PRT)
-          </span>
-        </span>
-      </div>
-      <div class="_03">0%</div>
-      <div class="rectangle-5324"></div>
-      <div class="as-of-xx-xx-xx-mm-dd-yyyy" id="datetime"></div>
-      <div class="vote-count-per-candidate">Vote Count per Candidate</div>
-      <div class="group-51">
-        <div class="rectangle-533"></div>
-        <div class="_04">0%</div>
-        <div class="_0-000-000">0,000,000</div>
-      </div>
-      <div class="group-52">
-        <div class="rectangle-5332"></div>
-        <div class="_05">0%</div>
-        <div class="_0-000-0002">0,000,000</div>
-      </div>
-      <div class="group-53">
-        <div class="rectangle-5333"></div>
-        <div class="_06">0%</div>
-        <div class="_0-000-0003-president">0,000,000</div>
-      </div>
-      <div class="group-28">
-        <div class="rectangle-5"></div>
-        <div
-          class="gen-douglas-mac-arthur-hwy-matina-davao-city-8000-davao-del-sur-philippines"
-        >
-          Gen. Douglas MacArthur Hwy.
-          <br />
-          Matina, Davao City 8000
-          <br />
-          Davao del Sur, Philippines
+      <div class="graph_and_stats">
+        <img class="bg_image" src="assets\bg-image\bg_image.png"/>
+        <div class="candidate_1">
+          <div class="candidate_1_back_bar_white"></div>
+          <img class="foreground_bar_blue"/>
+          <div class="foreground_line_blue"></div>
+          <div class="foreground_bar_blue_percent_box">
+            <img class="foreground_bar_blue_percent_holder" src="assets\primative-shapes\foreground_bar_blue_percent_holder.svg"/>
+            <div class="candidate_1_percentage">0%</div>
+          </div>
+          <div class="foreground_bar_blue_text_box">
+            <img class="foreground_bar_blue_text_holder" src="assets\primative-shapes\foreground_bar_blue_text_holder.svg"/>
+            <div class="candidate_1_name_and_party_name">
+              <span>
+                <span class="candidate_1_name" id="candidate_1_name">Candidate Name<br/></span>
+                <span class="candidate_1_party_name" id="candidate_1_partylist">Party Name (PRT)</span>
+              </span>
+            </div>
+          </div>
         </div>
-        <img class="image-54" src="assets\mcm_emblem_lightscale.png" />
+        <div class="candidate_2">
+          <div class="candidate_2_back_bar_white"></div>
+          <img class="foreground_bar_red"/>
+          <div class="foreground_line_red"></div>
+          <div class="foreground_bar_red_percent_box">
+            <img class="foreground_bar_red_percent_holder" src="assets\primative-shapes\foreground_bar_red_percent_holder.svg" />
+            <div class="candidate_2_percentage">0%</div>
+          </div>
+          <div class="foreground_bar_red_text_box">
+            <img class="foreground_bar_red_text_holder" src="assets\primative-shapes\foreground_bar_red_text_holder.svg" />
+            <div class="candidate_2_name_and_party_name">
+              <span>
+                <span class="candidate_2_name" id="candidate_2_name">Candidate Name<br/></span>
+                <span class="candidate_2_party_name" id="candidate_2_partylist">Party Name (PRT)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="candidate_3">
+          <div class="candidate_3_back_bar_white"></div>
+          <img class="foreground_bar_yellow"/>
+          <div class="foreground_line_yellow"></div>
+          <div class="foreground_bar_yellow_percent_box">
+            <img class="foreground_bar_yellow_percent_holder" src="assets\primative-shapes\foreground_bar_yellow_percent_holder.svg" />
+            <div class="candidate_3_percentage">0%</div>
+          </div>
+          <div class="foreground_bar_yellow_text_box">
+            <img class="foreground_bar_yellow_text_holder" src="assets\primative-shapes\foreground_bar_yellow_text_holder.svg" />
+            <div class="candidate_3_name_and_party_name">
+              <span>
+                <span class="candidate_3_name" id="candidate_3_name">Candidate Name<br/></span>
+                <span class="candidate_3_party_name" id="candidate_3_partylist">Party Name (PRT)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="candidates_bottom_stats">
+          <div class="candidates_bottom_back_bar_white"></div>
+          <div class="datetime" id="datetime"></div>
+          <div class="vote_count_per_candidate">Vote Count per Candidate</div>
+          <div class="candidate_1_stats">
+            <div class="candidate_1_box_blue"></div>
+            <div class="candidate_1_stats_percentage">0%</div>
+            <div class="candidate_1_stats_counter">0,000,000</div>
+          </div>
+          <div class="candidate_2_stats">
+            <div class="candidate_2_box_red"></div>
+            <div class="candidate_2_stats_percentage">0%</div>
+            <div class="candidate_2_stats_counter">0,000,000</div>
+          </div>
+          <div class="candidate_3_stats">
+            <div class="candidate_3_box_yellow"></div>
+            <div class="candidate_3_stats_percentage">0%</div>
+            <div class="candidate_3_stats_counter">0,000,000</div>
+          </div>          
+        </div>
       </div>
     </div>
   </body>
+  <footer>
+    <div class="bottom_bar">
+      <div class="bottom_bar_box"></div>
+      <div
+        class="address">
+        Gen. Douglas MacArthur Hwy.
+        <br />
+        Matina, Davao City 8000
+        <br />
+        Davao del Sur, Philippines
+      </div>
+      <img class="mcm_emblem_lightscale" src="assets\logo-emblem\mcm_emblem_lightscale.png" />
+    </div>
+  </footer>
 </html>
