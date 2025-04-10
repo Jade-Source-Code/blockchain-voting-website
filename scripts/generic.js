@@ -1,6 +1,8 @@
 let t = true;
 let cur;
 
+let currentPos;
+
 function navToggle() { // This function is to set true or false for the overlay to show or not
   if (t) {
     t = false;
@@ -51,35 +53,45 @@ async function loadYAML(pos) { // This function allows for the time to be update
   } catch (error) {
     console.error('Error loading YAML:', error);
   }
+  currentPos = pos;
+
+  fetch("http://10.103.156.154:5000/get-results")
+    .then(res => res.json())
+    .then(data => {
+      console.log("Data from Flask:", data);
+
+      const jsonString = JSON.stringify(data, null, 2);
+
+      const blob = new Blob([jsonString], { type: "application/json" });
+
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "results.json";  
+      document.body.appendChild(a);
+      a.click();
+
+      for (position in data.position) {
+        if (currentPos == position) {
+          for (let i = 1; i < 4; i++) {
+            document.getElementById("candidate_" + i + "_votecount").innerHTML = data.position[position].candidates[i - 1].voteCount;
+            document.getElementById("foreground_bar_" + i).style.width = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 800) + "px";
+            document.getElementById("candidate_" + i + "_votecount_percentage").innerHTML = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 100) + "%";
+            document.getElementById("candidate_" + i + "_votecount_percentage_box").innerHTML = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 100) + "%";
+          }
+        }
+      }
+
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    })
+    .catch(err => console.error("Error fetching JSON:", err));
+
   updateDateTime();
   console.log("Data has been updated.");
 }
 
 loadYAML("partylist");
-setInterval(loadYAML, 5000);
+setInterval(loadYAML, 60000);
 
-fetch("http://10.103.156.154:5000/get-results")
-  .then(res => res.json())
-  .then(data => {
-    console.log("Data from Flask:", data);
-
-    // Convert the JSON object to a string
-    const jsonString = JSON.stringify(data, null, 2);
-
-    // Create a Blob with the data
-    const blob = new Blob([jsonString], { type: "application/json" });
-
-    // Create a temporary download link
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "results.json"; // file name
-    document.body.appendChild(a);
-    a.click();
-
-    // Clean up
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  })
-  .catch(err => console.error("Error fetching JSON:", err));
 
