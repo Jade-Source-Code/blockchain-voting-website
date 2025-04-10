@@ -1,7 +1,7 @@
 let t = true;
 let cur;
 
-function navToggle() {
+function navToggle() { // This function is to set true or false for the overlay to show or not
   if (t) {
     t = false;
     document.getElementById("myNav").style.height = "clamp(330px, 70vh, 520px)";
@@ -11,7 +11,7 @@ function navToggle() {
   }
 }
 
-function updateDateTime() {
+function updateDateTime() { // Updates time with proper formatting and changes the current time in the website.
       const now = new Date();
       const options = { 
           weekday: 'long', 
@@ -26,7 +26,7 @@ function updateDateTime() {
       document.getElementById("datetime").textContent = now.toLocaleDateString('en-US', options);
   }
 
-async function loadYAML(pos) {
+async function loadYAML(pos) { // This function allows for the time to be updated and the names and partylists to be updated.
   try {
     const response = await fetch('datasheet.yml');
     const text = await response.text();
@@ -34,7 +34,7 @@ async function loadYAML(pos) {
     if (cur == pos) {
       cur = pos;
     }
-    for (position in data.position) {
+    for (position in data.position) { // This for loops allows for a easier integration of updating the names and partylists
       if (pos == position) {
         for (let i = 1; i < 4; i++) {
           document.getElementById("candidate_"+ i + "_name").innerHTML = data.position[position].candidates[i - 1].name + "<br/>";
@@ -42,7 +42,7 @@ async function loadYAML(pos) {
         }
       }
     }
-    if (pos == "partylist") {
+    if (pos == "partylist") { // This easily just fetches the partylist names
       for (let i = 1; i < 4; i++) {
         document.getElementById("candidate_"+ i + "_name").innerHTML = data.partylists[i - 1] + "<br/>";
         document.getElementById("candidate_" + i + "_partylist").innerHTML = "Total Count";
@@ -57,3 +57,29 @@ async function loadYAML(pos) {
 
 loadYAML("partylist");
 setInterval(loadYAML, 5000);
+
+fetch("http://10.103.156.154:5000/get-results")
+  .then(res => res.json())
+  .then(data => {
+    console.log("Data from Flask:", data);
+
+    // Convert the JSON object to a string
+    const jsonString = JSON.stringify(data, null, 2);
+
+    // Create a Blob with the data
+    const blob = new Blob([jsonString], { type: "application/json" });
+
+    // Create a temporary download link
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "results.json"; // file name
+    document.body.appendChild(a);
+    a.click();
+
+    // Clean up
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  })
+  .catch(err => console.error("Error fetching JSON:", err));
+
