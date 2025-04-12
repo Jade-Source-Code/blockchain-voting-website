@@ -73,7 +73,6 @@ async function loadYAML(pos) { // This function allows for the time to be update
               for (position in data.position) {
                 count = data.position[position].candidates[i - 1].voteCount + count;
               }
-              console.log(count);
               document.getElementById("candidate_" + i + "_votecount").innerHTML = count;
               document.getElementById("foreground_bar_" + i).style.width = Math.round((count / 30000) * 850) + "px";
               document.getElementById("candidate_" + i + "_votecount_percentage").innerHTML = Math.round((count / 30000) * 100) + "%";
