@@ -46,21 +46,23 @@
         height: 100%;
       }
     </style>
-    <title>eBoto Voting Result</title>
+    <title id="browser_tab_text">eBoto Voting Result</title>
   </head>
   <body>
     <div class="main">
       <div class="light_bar">
-        <div class="about-e-boto-mmcm">About eBoto: MMCM</div>
+        <div class="about-e-boto-mmcm">
+          <a href="about.html" style="cursor:pointert;text-decoration:none;color: #6f6f6f;">About eBoto: MMCM</a>
+        </div>
         <div class="light_bar_box"></div>
       </div>
       <div class="top_emblems">
-        <img class="mmcm_emblem" src="assets\logo-emblem\mcm_emblem.png" />
-        <img class="eboto_emblem" src="assets\logo-emblem\eboto_logo.png" />
+        <a href="index.html" style="cursor:pointert;"><img class="mmcm_emblem" src="assets\logo-emblem\mcm_emblem.png" id="web_emblem" alt="MMCM Emblem"/></a>
+        <a href="index.html" style="cursor:pointert;"><img class="eboto_emblem" src="assets\logo-emblem\eboto_logo.png" id="eboto_emblem" alt="eBoto Emblem"/></a>
       </div>
       <div class="red_title">
         <div class="red_title_box"></div>
-        <div class="_2025_ssg_general_elections">2025 SSG GENERAL ELECTIONS</div>
+        <div class="_2025_ssg_general_elections" id="red_title">2025 SSG GENERAL ELECTIONS</div>
       </div>
       <div class="live-vote-tally">Live Vote Tally</div>
       <div class="nav_bar">
@@ -71,22 +73,22 @@
             class="nav_bar_icon" src="assets\misc\nav_bar_icon.svg" alt="Open" onclick="navToggle()" style="font-size:30px;cursor:pointer"/>
           <div id="myNav" class="overlay">
             <div class="overlay-content">
-              <a onclick="loadYAML('partylist')" class="line">Party Lists</a>
-              <a onclick="loadYAML('president')" class="line">President</a>
-              <a onclick="loadYAML('vice-president')" class="line">Vice-President</a>
-              <a onclick="loadYAML('secretary')" class="line">Secretary</a>
-              <a onclick="loadYAML('assistant-secretary')" class="line">Asst. Secretary</a>
-              <a onclick="loadYAML('treasurer')" class="line">Treasurer</a>
-              <a onclick="loadYAML('assistant-treasurer')" class="line">Asst. Treasurer</a>
-              <a onclick="loadYAML('auditor')" class="line">Auditor</a>
-              <a onclick="loadYAML('public-relations-officer')" class="line">P-R Officer</a>
-              <a onclick="loadYAML('peace-and-order-officer')" class="line">P-O Officer</a>
-              <a onclick="loadYAML('stem')" class="line">STEM</a>
-              <a onclick="loadYAML('abm')" class="line">ABM</a>
-              <a onclick="loadYAML('humss')" class="line">HUMSS</a>
-              <a onclick="loadYAML('ict')" class="line">ICT</a>
-              <a onclick="loadYAML('grade-9')" class="line">Grade 9</a>
-              <a onclick="loadYAML('grade-10')" class="line">Grade 10</a>
+              <a onclick="loadData('partylist')" class="line">Party Lists</a>
+              <a onclick="loadData('president')" class="line">President</a>
+              <a onclick="loadData('vice-president')" class="line">Vice-President</a>
+              <a onclick="loadData('secretary')" class="line">Secretary</a>
+              <a onclick="loadData('assistant-secretary')" class="line">Asst. Secretary</a>
+              <a onclick="loadData('treasurer')" class="line">Treasurer</a>
+              <a onclick="loadData('assistant-treasurer')" class="line">Asst. Treasurer</a>
+              <a onclick="loadData('auditor')" class="line">Auditor</a>
+              <a onclick="loadData('public-relations-officer')" class="line">P-R Officer</a>
+              <a onclick="loadData('peace-and-order-officer')" class="line">P-O Officer</a>
+              <a onclick="loadData('stem')" class="line">STEM</a>
+              <a onclick="loadData('abm')" class="line">ABM</a>
+              <a onclick="loadData('humss')" class="line">HUMSS</a>
+              <a onclick="loadData('ict')" class="line">ICT</a>
+              <a onclick="loadData('grade-9')" class="line">Grade 9</a>
+              <a onclick="loadData('grade-10')" class="line">Grade 10</a>
             </div>
           </div>
         </div>

@@ -3,6 +3,14 @@
 
 # This datasheet is encouraged to be modified for ease of changing names within the website
 
+settings:
+  texts:
+    browser_tab_text: "eBoto Voting Result"
+    red_title: "2025 SSG GENERAL ELECTIONS"
+  sources:
+    web_emblem: "assets/logo-emblem/mcm_emblem.png"
+    eboto_emblem: "assets/logo-emblem/eboto_logo.png"
+
 partylists:
   - "Democratic (DEM)"
   - "Republican (GOP)"
