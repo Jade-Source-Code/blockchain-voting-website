@@ -1,0 +1,294 @@
+{
+  "partylists": [
+    "Democratic (DEM)",
+    "Republican (GOP)",
+    "Independent (IND)"
+  ],
+  "position": {
+    "president": {
+      "candidates": [
+        {
+          "name": "Mary Piatos",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 413
+        },
+        {
+          "name": "Leni Barbero",
+          "partylist": "Republican (GOP)",
+          "voteCount": 153
+        },
+        {
+          "name": "Iska Marino",
+          "partylist": "Independent (IND)",
+          "voteCount": 620
+        }
+      ]
+    },
+    "vice-president": {
+      "candidates": [
+        {
+          "name": "Erick Fronteras",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 6
+        },
+        {
+          "name": "Myle Medenilla",
+          "partylist": "Republican (GOP)",
+          "voteCount": 21
+        },
+        {
+          "name": "Jade Dela Cruz",
+          "partylist": "Independent (IND)",
+          "voteCount": 1932
+        }
+      ]
+    },
+    "secretary": {
+      "candidates": [
+        {
+          "name": "Miguel Sann",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 600
+        },
+        {
+          "name": "Tinna Pangan",
+          "partylist": "Republican (GOP)",
+          "voteCount": 200
+        },
+        {
+          "name": "Mona Lupa",
+          "partylist": "Independent (IND)",
+          "voteCount": 800
+        }
+      ]
+    },
+    "assistant-secretary": {
+      "candidates": [
+        {
+          "name": "Ella Ganado",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 100
+        },
+        {
+          "name": "Ben Tuwing",
+          "partylist": "Republican (GOP)",
+          "voteCount": 950
+        },
+        {
+          "name": "Harry Vonn",
+          "partylist": "Independent (IND)",
+          "voteCount": 721
+        }
+      ]
+    },
+    "treasurer": {
+      "candidates": [
+        {
+          "name": "Al Beback",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 215
+        },
+        {
+          "name": "Justin Time",
+          "partylist": "Republican (GOP)",
+          "voteCount": 680
+        },
+        {
+          "name": "Sal Monella",
+          "partylist": "Independent (IND)",
+          "voteCount": 495
+        }
+      ]
+    },
+    "assistant-treasurer": {
+      "candidates": [
+        {
+          "name": "Benn Dover",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 1029
+        },
+        {
+          "name": "Bianca Navarro",
+          "partylist": "Republican (GOP)",
+          "voteCount": 1280
+        },
+        {
+          "name": "Mike Rotch",
+          "partylist": "Independent (IND)",
+          "voteCount": 659
+        }
+      ]
+    },
+    "auditor": {
+      "candidates": [
+        {
+          "name": "Tina Turnip",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 150
+        },
+        {
+          "name": "Patt Myback",
+          "partylist": "Republican (GOP)",
+          "voteCount": 1480
+        },
+        {
+          "name": "Dee Nial",
+          "partylist": "Independent (IND)",
+          "voteCount": 1008
+        }
+      ]
+    },
+    "public-relations-officer": {
+      "candidates": [
+        {
+          "name": "Ram Bhutan",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 150
+        },
+        {
+          "name": "Ben Tador",
+          "partylist": "Republican (GOP)",
+          "voteCount": 1060
+        },
+        {
+          "name": "Adrian Castillo",
+          "partylist": "Independent (IND)",
+          "voteCount": 501
+        }
+      ]
+    },
+    "peace-and-order-officer": {
+      "candidates": [
+        {
+          "name": "Danielle Morales",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 202
+        },
+        {
+          "name": "Elijah Cruz",
+          "partylist": "Republican (GOP)",
+          "voteCount": 356
+        },
+        {
+          "name": "Hannah Velasco",
+          "partylist": "Independent (IND)",
+          "voteCount": 200
+        }
+      ]
+    },
+    "stem": {
+      "candidates": [
+        {
+          "name": "Jasmine Gutierrez",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 192
+        },
+        {
+          "name": "Kyle Ramirez",
+          "partylist": "Republican (GOP)",
+          "voteCount": 160
+        },
+        {
+          "name": "Lara Aquino",
+          "partylist": "Independent (IND)",
+          "voteCount": 1450
+        }
+      ]
+    },
+    "abm": {
+      "candidates": [
+        {
+          "name": "Marcus Villanueva",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 1550
+        },
+        {
+          "name": "Nina Soriano",
+          "partylist": "Republican (GOP)",
+          "voteCount": 1682
+        },
+        {
+          "name": "Oliver Sandoval",
+          "partylist": "Independent (IND)",
+          "voteCount": 201
+        }
+      ]
+    },
+    "humss": {
+      "candidates": [
+        {
+          "name": "Quentin Bautista",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 110
+        },
+        {
+          "name": "Rica Manalo",
+          "partylist": "Republican (GOP)",
+          "voteCount": 50
+        },
+        {
+          "name": "Samuel Abad",
+          "partylist": "Independent (IND)",
+          "voteCount": 1200
+        }
+      ]
+    },
+    "ict": {
+      "candidates": [
+        {
+          "name": "Thalia Robles",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 682
+        },
+        {
+          "name": "Uri Mateo",
+          "partylist": "Republican (GOP)",
+          "voteCount": 1802
+        },
+        {
+          "name": "William Torres",
+          "partylist": "Independent (IND)",
+          "voteCount": 1612
+        }
+      ]
+    },
+    "grade-9": {
+      "candidates": [
+        {
+          "name": "Xyra Dominguez",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 151
+        },
+        {
+          "name": "Beatrice Cruzado",
+          "partylist": "Republican (GOP)",
+          "voteCount": 1852
+        },
+        {
+          "name": "Cyrus Vergara",
+          "partylist": "Independent (IND)",
+          "voteCount": 600
+        }
+      ]
+    },
+    "grade-10": {
+      "candidates": [
+        {
+          "name": "Ethan Alonzo",
+          "partylist": "Democratic (DEM)",
+          "voteCount": 138
+        },
+        {
+          "name": "Fiona Balagtas",
+          "partylist": "Republican (GOP)",
+          "voteCount": 1245
+        },
+        {
+          "name": "Isko Barh",
+          "partylist": "Independent (IND)",
+          "voteCount": 485
+        }
+      ]
+    }
+  }
+}

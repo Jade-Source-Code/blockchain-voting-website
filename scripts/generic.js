@@ -3,6 +3,8 @@ let cur;
 
 let currentPos;
 
+let debugMode = false;
+
 function navToggle() { // This function is to set true or false for the overlay to show or not
   if (t) {
     t = false;
@@ -33,62 +35,68 @@ async function loadYAML(pos) { // This function allows for the time to be update
     const response = await fetch('datasheet.yml');
     const text = await response.text();
     const data = jsyaml.load(text);
+
     if (cur == pos) {
       cur = pos;
     }
+
     for (position in data.position) { // This for loops allows for a easier integration of updating the names and partylists
-      if (pos == position) {
+      if (pos == "partylist") { // This easily just fetches the partylist names
+        for (let i = 1; i < 4; i++) {
+          document.getElementById("candidate_"+ i + "_name").innerHTML = data.partylists[i - 1] + "<br/>";
+          document.getElementById("candidate_" + i + "_partylist").innerHTML = "Total Count";
+        }
+      } else if (pos == position) {
         for (let i = 1; i < 4; i++) {
           document.getElementById("candidate_"+ i + "_name").innerHTML = data.position[position].candidates[i - 1].name + "<br/>";
           document.getElementById("candidate_" + i + "_partylist").innerHTML = data.position[position].candidates[i - 1].partylist + "<br/>";
         }
       }
     }
-    if (pos == "partylist") { // This easily just fetches the partylist names
-      for (let i = 1; i < 4; i++) {
-        document.getElementById("candidate_"+ i + "_name").innerHTML = data.partylists[i - 1] + "<br/>";
-        document.getElementById("candidate_" + i + "_partylist").innerHTML = "Total Count";
-      }
-    }
+
   } catch (error) {
-    console.error('Error loading YAML:', error);
+    if (debugMode) console.error('Error loading YAML:', error);
   }
   currentPos = pos;
 
-  fetch("http://10.103.156.154:5000/get-results")
-    .then(res => res.json())
-    .then(data => {
-      console.log("Data from Flask:", data);
+  try {
+    fetch("formatted_result_data.json")
+      .then(res => res.json())
+      .then(data => {
+        if (debugMode) console.log("Data from Flask:", data);
 
-      const jsonString = JSON.stringify(data, null, 2);
+        let count = 0;
 
-      const blob = new Blob([jsonString], { type: "application/json" });
-
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "results.json";  
-      document.body.appendChild(a);
-      a.click();
-
-      for (position in data.position) {
-        if (currentPos == position) {
-          for (let i = 1; i < 4; i++) {
-            document.getElementById("candidate_" + i + "_votecount").innerHTML = data.position[position].candidates[i - 1].voteCount;
-            document.getElementById("foreground_bar_" + i).style.width = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 800) + "px";
-            document.getElementById("candidate_" + i + "_votecount_percentage").innerHTML = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 100) + "%";
-            document.getElementById("candidate_" + i + "_votecount_percentage_box").innerHTML = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 100) + "%";
+        for (position in data.position) {
+          if (pos == "partylist") { // This easily just fetches the partylist names
+            for (let i = 1; i < 4; i++) {
+              for (position in data.position) {
+                count = data.position[position].candidates[i - 1].voteCount + count;
+              }
+              console.log(count);
+              document.getElementById("candidate_" + i + "_votecount").innerHTML = count;
+              document.getElementById("foreground_bar_" + i).style.width = Math.round((count / 30000) * 850) + "px";
+              document.getElementById("candidate_" + i + "_votecount_percentage").innerHTML = Math.round((count / 30000) * 100) + "%";
+              document.getElementById("candidate_" + i + "_votecount_percentage_box").innerHTML = Math.round((count / 30000) * 100) + "%";
+              count = 0;
+            }
+          } else if (currentPos == position) {
+            for (let i = 1; i < 4; i++) {
+              document.getElementById("candidate_" + i + "_votecount").innerHTML = data.position[position].candidates[i - 1].voteCount;
+              document.getElementById("foreground_bar_" + i).style.width = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 850) + "px";
+              document.getElementById("candidate_" + i + "_votecount_percentage").innerHTML = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 100) + "%";
+              document.getElementById("candidate_" + i + "_votecount_percentage_box").innerHTML = Math.round((data.position[position].candidates[i - 1].voteCount / 2000) * 100) + "%";
+            }
           }
         }
-      }
-
-      document.body.removeChild(a);
-      URL.revokeObjectURL(url);
-    })
-    .catch(err => console.error("Error fetching JSON:", err));
+      })
+      .catch(err => console.error("Error fetching JSON:", err));
+  } catch (e) {
+    if (debugMode) console.error('Error fetching result:', error);
+  }
 
   updateDateTime();
-  console.log("Data has been updated.");
+  if (debugMode) console.log("Data has been updated.");
 }
 
 loadYAML("partylist");
