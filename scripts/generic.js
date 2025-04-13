@@ -7,6 +7,12 @@ let data_json = {};
 
 let debugMode = false;
 
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+if (isMobile) {
+  document.getElementById("main-style").href = "stylesheets/mobile.css";
+}
+
 function sleep(ms) {
   return new Promise(resolve => setTimeout(resolve, ms));
 }
@@ -14,7 +20,8 @@ function sleep(ms) {
 function navToggle() { // This function is to set true or false for the overlay to show or not
   if (t) {
     t = false;
-    document.getElementById("myNav").style.height = "clamp(330px, 70vh, 520px)";
+    if (isMobile) {document.getElementById("myNav").style.height = "325px";}
+    else {document.getElementById("myNav").style.height = "clamp(325px, 70vh, 520px)";}
   } else {
     t = true;
     document.getElementById("myNav").style.height = "0%";
@@ -38,7 +45,7 @@ function updateDateTime() { // Updates time with proper formatting and changes t
 
 async function loadData(pos) { // This function allows for the time to be updated and the names and partylists to be updated.
   await fetchData();
-  
+
   if (cur == pos) {
     cur = pos;
   }
@@ -76,7 +83,8 @@ async function loadData(pos) { // This function allows for the time to be update
           count = data_json.position[position].candidates[i - 1].voteCount + count;
         }
         animateVoteCount(i, count, 30000, "/");
-        document.getElementById("foreground_bar_" + i).style.width = Math.round((count / 30000) * 850) + "px";
+        if (isMobile) {document.getElementById("foreground_bar_" + i).style.width = Math.round((count / 30000) * 245) + "px";}
+        else {document.getElementById("foreground_bar_" + i).style.width = Math.round((count / 30000) * 850) + "px";}
         animateVoteCount(i, Math.round((count / 30000) * 100), 100, "%");
         animateVoteCount(i, Math.round((count / 30000) * 100), 100, "%[]");
         count = 0;
@@ -84,7 +92,8 @@ async function loadData(pos) { // This function allows for the time to be update
     } else if (currentPos == position) {
       for (let i = 1; i < 4; i++) {
         animateVoteCount(i, data_json.position[position].candidates[i - 1].voteCount, 2000, "/");
-        document.getElementById("foreground_bar_" + i).style.width = Math.round((data_json.position[position].candidates[i - 1].voteCount / 2000) * 850) + "px";
+        if (isMobile) {document.getElementById("foreground_bar_" + i).style.width = Math.round((data_json.position[position].candidates[i - 1].voteCount / 2000) * 245) + "px";}
+        else {document.getElementById("foreground_bar_" + i).style.width = Math.round((data_json.position[position].candidates[i - 1].voteCount / 2000) * 850) + "px";}
         animateVoteCount(i, Math.round((data_json.position[position].candidates[i - 1].voteCount / 2000) * 100), 100, "%");
         animateVoteCount(i, Math.round((data_json.position[position].candidates[i - 1].voteCount / 2000) * 100), 100, "%[]");
       }

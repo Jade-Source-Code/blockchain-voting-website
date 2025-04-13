@@ -1,11 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <p>Hello World!</p>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link rel="icon" href="assets\logo-emblem\eboto_tab_logo.png">
+    <link rel="stylesheet" href="stylesheets\vars.css" />
+    <link rel="stylesheet" href="stylesheets\style.css" />
+    <script src="scripts\generic.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+
+    <style>
+      a,
+      button,
+      input,
+      select,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: none;
+        text-decoration: none;
+        background: none;
+
+        -webkit-font-smoothing: antialiased;
+      }
+
+      menu,
+      ol,
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        font-family: 'Lato', sans-serif;
+        overflow-x: hidden;
+        overflow-y: auto;
+        height: 100%;
+      }
+    </style>
+    <title id="browser_tab_text">eBoto Voting Result</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="light_bar">
+        <div class="about-e-boto-mmcm">
+          <a href="about.html" style="cursor:pointert;text-decoration:none;color: #6f6f6f;">About eBoto: MMCM</a>
+        </div>
+        <div class="light_bar_box"></div>
+      </div>
+      <div class="top_emblems">
+        <a href="index.html" style="cursor:pointert;"><img class="mmcm_emblem" src="assets\logo-emblem\mcm_emblem.png" id="web_emblem" alt="MMCM Emblem"/></a>
+        <a href="index.html" style="cursor:pointert;"><img class="eboto_emblem" src="assets\logo-emblem\eboto_logo.png" id="eboto_emblem" alt="eBoto Emblem"/></a>
+      </div>
+      <div class="red_title">
+        <div class="red_title_box"></div>
+        <div class="_2025_ssg_general_elections">About eBoto</div>
+      </div>
+      <div class="live-vote-tally">Live Vote Tally</div>
+    </div>
+    <div class="candidate_1_back_bar_white"></div>
+  </body>
+  <footer>
+    <div class="bottom_bar">
+      <div class="bottom_bar_box"></div>
+      <div
+        class="address">
+        Gen. Douglas MacArthur Hwy.
+        <br />
+        Matina, Davao City 8000
+        <br />
+        Davao del Sur, Philippines
+      </div>
+      <img class="mcm_emblem_lightscale" src="assets\logo-emblem\mcm_emblem_lightscale.png" />
+    </div>
+  </footer>
 </html>

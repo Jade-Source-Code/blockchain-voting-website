@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <link rel="icon" href="assets\logo-emblem\eboto_tab_logo.png">
-    <link rel="stylesheet" href="stylesheets\vars.css" />
-    <link rel="stylesheet" href="stylesheets\style.css" />
+    <link rel="stylesheet" href="stylesheets\vars.css"/>
+    <link rel="stylesheet" href="stylesheets\style.css" id="main-style"/>
     <script src="scripts\generic.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/web3@1.7.3/dist/web3.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
@@ -100,11 +100,11 @@
           <img class="foreground_bar_1" id="foreground_bar_1"/>
           <div class="foreground_line_blue"></div>
           <div class="foreground_bar_blue_percent_box">
-            <img class="foreground_bar_blue_percent_holder" src="assets\primative-shapes\foreground_bar_blue_percent_holder.svg"/>
+            <div class="foreground_bar_blue_percent_holder"></div>
             <div class="candidate_1_percentage" id="candidate_1_votecount_percentage_box">0%</div>
           </div>
           <div class="foreground_bar_blue_text_box">
-            <img class="foreground_bar_blue_text_holder" src="assets\primative-shapes\foreground_bar_blue_text_holder.svg"/>
+            <div class="foreground_bar_blue_text_holder"></div>
             <div class="candidate_1_name_and_party_name">
               <span>
                 <span class="candidate_1_name" id="candidate_1_name">Candidate Name<br/></span>
@@ -118,11 +118,11 @@
           <img class="foreground_bar_2" id="foreground_bar_2"/>
           <div class="foreground_line_red"></div>
           <div class="foreground_bar_red_percent_box">
-            <img class="foreground_bar_red_percent_holder" src="assets\primative-shapes\foreground_bar_red_percent_holder.svg" />
+            <div class="foreground_bar_red_percent_holder"></div>
             <div class="candidate_2_percentage" id="candidate_2_votecount_percentage_box">0%</div>
           </div>
           <div class="foreground_bar_red_text_box">
-            <img class="foreground_bar_red_text_holder" src="assets\primative-shapes\foreground_bar_red_text_holder.svg" />
+            <div class="foreground_bar_red_text_holder"></div>
             <div class="candidate_2_name_and_party_name">
               <span>
                 <span class="candidate_2_name" id="candidate_2_name">Candidate Name<br/></span>
@@ -136,11 +136,11 @@
           <img class="foreground_bar_3" id="foreground_bar_3"/>
           <div class="foreground_line_yellow"></div>
           <div class="foreground_bar_yellow_percent_box">
-            <img class="foreground_bar_yellow_percent_holder" src="assets\primative-shapes\foreground_bar_yellow_percent_holder.svg" />
+            <div class="foreground_bar_yellow_percent_holder"></div>
             <div class="candidate_3_percentage" id="candidate_3_votecount_percentage_box">0%</div>
           </div>
           <div class="foreground_bar_yellow_text_box">
-            <img class="foreground_bar_yellow_text_holder" src="assets\primative-shapes\foreground_bar_yellow_text_holder.svg" />
+            <div class="foreground_bar_yellow_text_holder"></div>
             <div class="candidate_3_name_and_party_name">
               <span>
                 <span class="candidate_3_name" id="candidate_3_name">Candidate Name<br/></span>
@@ -156,17 +156,17 @@
           <div class="candidate_1_stats">
             <div class="candidate_1_box_blue"></div>
             <div class="candidate_1_stats_percentage" id="candidate_1_votecount_percentage">0%</div>
-            <div class="candidate_1_stats_counter" id="candidate_1_votecount">0,000,000</div>
+            <div class="candidate_1_stats_counter" id="candidate_1_votecount">0 / 0</div>
           </div>
           <div class="candidate_2_stats">
             <div class="candidate_2_box_red"></div>
             <div class="candidate_2_stats_percentage" id="candidate_2_votecount_percentage">0%</div>
-            <div class="candidate_2_stats_counter" id="candidate_2_votecount">0,000,000</div>
+            <div class="candidate_2_stats_counter" id="candidate_2_votecount">0 / 0</div>
           </div>
           <div class="candidate_3_stats">
             <div class="candidate_3_box_yellow"></div>
             <div class="candidate_3_stats_percentage" id="candidate_3_votecount_percentage">0%</div>
-            <div class="candidate_3_stats_counter" id="candidate_3_votecount">0,000,000</div>
+            <div class="candidate_3_stats_counter" id="candidate_3_votecount">0 / 0</div>
           </div>          
         </div>
       </div>
