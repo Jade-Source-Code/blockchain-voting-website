@@ -7,6 +7,11 @@ let data_json = {};
 
 let debugMode = false;
 
+const capitalize = (str, lower = false) =>
+  (lower ? str.toLowerCase() : str)
+    .replace(/-/g, ' ') // Replace hyphens with spaces
+    .replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
+
 const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   
 if (isMobile) {
@@ -49,6 +54,8 @@ async function loadData(pos) { // This function allows for the time to be update
   if (cur == pos) {
     cur = pos;
   }
+
+  document.getElementById("position_text").innerHTML = capitalize(pos);
 
   for (category in data_yml.settings) {
     for (text in data_yml.settings.texts) {

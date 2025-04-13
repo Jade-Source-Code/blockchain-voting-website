@@ -125,7 +125,7 @@
   font-size: clamp(8px, 3vw, 32px);
   font-weight: 600;
   position: absolute;
-  transform: translateX(-50%);
+  left:-40px;
   top: 2.5px;
 }
 .nav_bar_icon {
