@@ -1,5 +1,7 @@
-/* Figma Styles of your File */
 :root {
     --ol_font_size: clamp(10px, 1.25vw, 20px);
+    --partylist_1_color: #2D4B80;
+    --partylist_2_color: #9c1418;
+    --partylist_3_color: #b5af00;
   }
   

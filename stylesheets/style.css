@@ -116,23 +116,24 @@
   transform: translateX(-50%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.nav_icon_and_position {
+  top: 1%;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+}
 .position_text {
   color: #ffffff;
-  text-align: center;
   font-family: "Montserrat-SemiBold", sans-serif;
   font-size: clamp(8px, 3vw, 32px);
   font-weight: 600;
-  position: absolute;
-  left:-60px;
-  top: 2.5px;
 }
 .nav_bar_icon {
   width: clamp(20px, 2vw, 30px);
   height: clamp(10px, 2vw, 23px);
-  position: absolute;
-  right: clamp(10px, 10vw, 70px);
-  top: clamp(2px, 1vw, 7.5px);
-  overflow: hidden;
+  margin-right: 0.2em;
 }
 .overlay {
   height: 0;
@@ -241,7 +242,7 @@
   width: 0px;
   height: 75px;
   position: absolute;
-  background: #2D4B80;
+  background: var(--partylist_1_color);
   overflow: hidden;
   left: 24.7%;
   top: 15%;
@@ -249,7 +250,7 @@
 .foreground_bar_blue_percent_holder {
   width: 75px;
   height: 75px;
-  background: #2D4B80;
+  background: var(--partylist_1_color);
   position: absolute;
   overflow: hidden;
   transform: translateX(-50%);
@@ -259,7 +260,7 @@
 .foreground_bar_blue_text_holder {
   width: 277px;
   height: 75px;
-  background: #2D4B80;
+  background: var(--partylist_1_color);
   position: absolute;
   overflow: hidden;
   left: clamp(1%, 10vw, 1%);
@@ -339,7 +340,7 @@
   width: 0px;
   height: 75px;
   position: absolute;
-  background: #9c1418;
+  background: var(--partylist_2_color);
   overflow: hidden;
   left: 24.7%;
   top: 15%;
@@ -347,7 +348,7 @@
 .foreground_bar_red_percent_holder {
   width: 75px;
   height: 75px;
-  background: #9c1418;
+  background: var(--partylist_2_color);
   position: absolute;
   overflow: hidden;
   transform: translateX(-50%);
@@ -357,7 +358,7 @@
 .foreground_bar_red_text_holder {
   width: 277px;
   height: 75px;
-  background: #9c1418;
+  background: var(--partylist_2_color);
   position: absolute;
   overflow: hidden;
   left: clamp(1%, 10vw, 1%);
@@ -437,7 +438,7 @@
   width: 0px;
   height: 75px;
   position: absolute;
-  background: #b5af00;
+  background: var(--partylist_3_color);
   overflow: hidden;
   left: 24.7%;
   top: 15%;
@@ -445,7 +446,7 @@
 .foreground_bar_yellow_percent_holder {
   width: 75px;
   height: 75px;
-  background: #b5af00;
+  background: var(--partylist_3_color);
   position: absolute;
   overflow: hidden;
   transform: translateX(-50%);
@@ -455,7 +456,7 @@
 .foreground_bar_yellow_text_holder {
   width: 277px;
   height: 75px;
-  background: #b5af00;
+  background: var(--partylist_3_color);
   position: absolute;
   overflow: hidden;
   left: clamp(1%, 10vw, 1%);
@@ -562,7 +563,7 @@
   position: static;
 }
 .candidate_1_box_blue {
-  background: #2d4b80;
+  background: var(--partylist_1_color);
   width: 234px;
   height: 124px;
   position: absolute;
@@ -599,7 +600,7 @@
   position: static;
 }
 .candidate_2_box_red {
-  background: #9c1418;
+  background: var(--partylist_2_color);
   width: 234px;
   height: 124px;
   position: absolute;
@@ -637,7 +638,7 @@
   position: static;
 }
 .candidate_3_box_yellow {
-  background: #b5af00;
+  background: var(--partylist_3_color);
   width: 234px;
   height: 124px;
   position: absolute;

@@ -67,10 +67,11 @@
       <div class="live-vote-tally">Live Vote Tally</div>
       <div class="nav_bar">
         <div class="nav_bar_grey"></div>
-        <div class="position_text" id="position_text">Position</div>
         <div class="nav_bar_button">
-          <img
-            class="nav_bar_icon" src="assets\misc\nav_bar_icon.svg" alt="Open" onclick="navToggle()" style="font-size:30px;cursor:pointer"/>
+          <div class="nav_icon_and_position">
+            <img class="nav_bar_icon" src="assets\misc\nav_bar_icon.svg" alt="Open" onclick="navToggle()" style="font-size:30px;cursor:pointer"/>
+            <div class="position_text" id="position_text">Position</div>
+          </div>
           <div id="myNav" class="overlay">
             <div class="overlay-content">
               <a onclick="loadData('partylist')" class="line">Party Lists</a>
@@ -93,6 +94,27 @@
           </div>
         </div>
       </div>
+      <template id="candidate-template">
+        <div class="candidate">
+          <div class="candidate_back_bar_white"></div>
+          <div class="foreground_bar" data-bar></div>
+          <div class="foreground_line_blue"></div>
+          <div class="foreground_bar_blue_percent_box">
+            <div class="foreground_bar_blue_percent_holder"></div>
+            <div class="candidate_percentage" data-percentage>0%</div>
+          </div>
+          <div class="foreground_bar_blue_text_box">
+            <div class="foreground_bar_blue_text_holder"></div>
+            <div class="candidate_name_and_party">
+              <span>
+                <span class="candidate_name" data-name>Candidate Name<br/></span>
+                <span class="candidate_party" data-party>Party Name (PRT)</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </template>
+      <div id="candidates-container"></div>
       <div class="graph_and_stats">
         <img class="bg_image" src="assets\bg-image\bg_image.png"/>
         <div class="candidate_1">

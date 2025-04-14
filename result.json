@@ -1,8 +1,17 @@
 {
   "partylists": [
-    "Democratic (DEM)",
-    "Republican (GOP)",
-    "Independent (IND)"
+    {
+    "partylist_name": "Democratic (DEM)",
+    "partylist_color": "#2D4B80"
+    },
+    {
+    "partylist_name": "Republican (GOP)",
+    "partylist_color": "#9c1418"
+    },
+    {
+    "partylist_name": "Independent (IND)",
+    "partylist_color": "#b5af00"
+    }
   ],
   "position": {
     "president": {

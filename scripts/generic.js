@@ -66,16 +66,16 @@ async function loadData(pos) { // This function allows for the time to be update
     }
   }
 
-  for (position in data_yml.position) { // This for loops allows for a easier integration of updating the names and partylists
+  for (position in data_json.position) { // This for loops allows for a easier integration of updating the names and partylists
     if (pos == "partylist") { // This easily just fetches the partylist names
       for (let i = 1; i < 4; i++) {
-        document.getElementById("candidate_"+ i + "_name").innerHTML = data_yml.partylists[i - 1] + "<br/>";
+        document.getElementById("candidate_"+ i + "_name").innerHTML = data_json.partylists[i - 1].partylist_name + "<br/>";
         document.getElementById("candidate_" + i + "_partylist").innerHTML = "Total Count";
       }
     } else if (pos == position) {
       for (let i = 1; i < 4; i++) {
-        document.getElementById("candidate_"+ i + "_name").innerHTML = data_yml.position[position].candidates[i - 1].name + "<br/>";
-        document.getElementById("candidate_" + i + "_partylist").innerHTML = data_yml.position[position].candidates[i - 1].partylist + "<br/>";
+        document.getElementById("candidate_"+ i + "_name").innerHTML = data_json.position[position].candidates[i - 1].name + "<br/>";
+        document.getElementById("candidate_" + i + "_partylist").innerHTML = data_json.position[position].candidates[i - 1].partylist + "<br/>";
       }
     }
   }
@@ -126,7 +126,6 @@ async function fetchData() {
 }
 
 function animateVoteCount(i, targetCount, length, context) {
-  let current = 0;
   const duration = 500;
   const startTime = performance.now();
 
