@@ -1,35 +1,52 @@
 {
-  "partylists": [
-    {
-    "partylist_name": "Democratic (DEM)",
-    "partylist_color": "#2D4B80"
+  "settings": {
+    "candidate_maxvote": "2000",
+    "partylist_maxvote": "30000"
+  },
+  "partylists": {
+    "partylist_1": {
+      "name": "Democratic (DEM)",
+      "color": "#2D4B80"
     },
-    {
-    "partylist_name": "Republican (GOP)",
-    "partylist_color": "#9c1418"
+    "partylist_2": {
+      "name": "Republican (GOP)",
+      "color": "#9c1418"
     },
-    {
-    "partylist_name": "Independent (IND)",
-    "partylist_color": "#b5af00"
+    "partylist_3": {
+      "name": "Independent (IND)",
+      "color": "#1dbf48"
+    },
+    "partylist_4": {
+      "name": "Avaleon (AVA)",
+      "color": "#c716be"
+    },
+    "partylist_5": {
+      "name": "Sprakling (SPR)",
+      "color": "#c4be0e"
     }
-  ],
+  },
   "position": {
     "president": {
       "candidates": [
         {
           "name": "Mary Piatos",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 413
         },
         {
           "name": "Leni Barbero",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 153
         },
         {
           "name": "Iska Marino",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 620
+        },
+        {
+          "name": "Bruh Marino",
+          "partylist": "partylist_5",
+          "voteCount": 100
         }
       ]
     },
@@ -37,18 +54,23 @@
       "candidates": [
         {
           "name": "Erick Fronteras",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 6
         },
         {
           "name": "Myle Medenilla",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 21
         },
         {
           "name": "Jade Dela Cruz",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 1932
+        },
+        {
+          "name": "Kalonggay Express",
+          "partylist": "partylist_4",
+          "voteCount": 15
         }
       ]
     },
@@ -56,18 +78,13 @@
       "candidates": [
         {
           "name": "Miguel Sann",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 600
         },
         {
           "name": "Tinna Pangan",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 200
-        },
-        {
-          "name": "Mona Lupa",
-          "partylist": "Independent (IND)",
-          "voteCount": 800
         }
       ]
     },
@@ -75,17 +92,17 @@
       "candidates": [
         {
           "name": "Ella Ganado",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 100
         },
         {
           "name": "Ben Tuwing",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 950
         },
         {
           "name": "Harry Vonn",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 721
         }
       ]
@@ -94,17 +111,17 @@
       "candidates": [
         {
           "name": "Al Beback",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 215
         },
         {
           "name": "Justin Time",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 680
         },
         {
           "name": "Sal Monella",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 495
         }
       ]
@@ -113,17 +130,17 @@
       "candidates": [
         {
           "name": "Benn Dover",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 1029
         },
         {
           "name": "Bianca Navarro",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 1280
         },
         {
           "name": "Mike Rotch",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 659
         }
       ]
@@ -132,17 +149,17 @@
       "candidates": [
         {
           "name": "Tina Turnip",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 150
         },
         {
           "name": "Patt Myback",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 1480
         },
         {
           "name": "Dee Nial",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 1008
         }
       ]
@@ -151,17 +168,17 @@
       "candidates": [
         {
           "name": "Ram Bhutan",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 150
         },
         {
           "name": "Ben Tador",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 1060
         },
         {
           "name": "Adrian Castillo",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 501
         }
       ]
@@ -170,17 +187,17 @@
       "candidates": [
         {
           "name": "Danielle Morales",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 202
         },
         {
           "name": "Elijah Cruz",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 356
         },
         {
           "name": "Hannah Velasco",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 200
         }
       ]
@@ -189,17 +206,17 @@
       "candidates": [
         {
           "name": "Jasmine Gutierrez",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 192
         },
         {
           "name": "Kyle Ramirez",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 160
         },
         {
           "name": "Lara Aquino",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 1450
         }
       ]
@@ -208,17 +225,17 @@
       "candidates": [
         {
           "name": "Marcus Villanueva",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 1550
         },
         {
           "name": "Nina Soriano",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 1682
         },
         {
           "name": "Oliver Sandoval",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 201
         }
       ]
@@ -227,17 +244,17 @@
       "candidates": [
         {
           "name": "Quentin Bautista",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 110
         },
         {
           "name": "Rica Manalo",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 50
         },
         {
           "name": "Samuel Abad",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 1200
         }
       ]
@@ -246,17 +263,17 @@
       "candidates": [
         {
           "name": "Thalia Robles",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 682
         },
         {
           "name": "Uri Mateo",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 1802
         },
         {
           "name": "William Torres",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 1612
         }
       ]
@@ -265,17 +282,17 @@
       "candidates": [
         {
           "name": "Xyra Dominguez",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 151
         },
         {
           "name": "Beatrice Cruzado",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 1852
         },
         {
           "name": "Cyrus Vergara",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 600
         }
       ]
@@ -284,17 +301,17 @@
       "candidates": [
         {
           "name": "Ethan Alonzo",
-          "partylist": "Democratic (DEM)",
+          "partylist": "partylist_1",
           "voteCount": 138
         },
         {
           "name": "Fiona Balagtas",
-          "partylist": "Republican (GOP)",
+          "partylist": "partylist_2",
           "voteCount": 1245
         },
         {
           "name": "Isko Barh",
-          "partylist": "Independent (IND)",
+          "partylist": "partylist_3",
           "voteCount": 485
         }
       ]
