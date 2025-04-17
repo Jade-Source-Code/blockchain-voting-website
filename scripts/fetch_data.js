@@ -38,6 +38,34 @@ export async function loadData(pos) { // This function allows for the time to be
 
   document.getElementById("position_text").innerHTML = capitalize(pos);
 
+  const myNavigation = document.getElementById('myNav');
+  myNavigation.innerHTML = '';
+
+  const overlay_content = document.createElement('div');
+  overlay_content.className = 'overlay-content';
+
+  const partylistNav = document.createElement('a');
+  partylistNav.className = 'line';
+  partylistNav.onclick = () => loadData('partylist');
+  partylistNav.innerHTML = `
+    Party Lists
+  `;
+
+  overlay_content.appendChild(partylistNav);
+
+  for (let position in data_json.position) {
+    const positionNav = document.createElement('a');
+    positionNav.className = 'line';
+    positionNav.onclick = () => loadData(position);
+    positionNav.innerHTML = `
+      ${capitalize(position)}
+    `;
+    overlay_content.appendChild(positionNav);
+  }
+
+
+  myNavigation.appendChild(overlay_content);
+
   try {
     try {
       const prvContainer = document.getElementById('candidates_list');

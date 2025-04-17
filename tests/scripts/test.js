@@ -1,4 +1,4 @@
-import { loadData } from "./fetch_data.js";
+import { loadData } from "../../scripts/fetch_data.js";
 
 let t = true;
 

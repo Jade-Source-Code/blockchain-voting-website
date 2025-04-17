@@ -1,6 +1,6 @@
 import { loadData } from "./fetch_data.js";
 
-let t = true;
+let navBool = true;
 
 let currentPos = "partylist";
 
@@ -16,15 +16,16 @@ if (isMobile) {
 }
 
 export function navToggle() { // This function is to set true or false for the overlay to show or not
-  if (t) {
-    t = false;
-    if (isMobile) {document.getElementById("myNav").style.height = "325px";}
-    else {document.getElementById("myNav").style.height = "clamp(325px, 70vh, 520px)";}
+  const overlay = document.querySelector('.overlay');
+  if (overlay.classList.contains('open')) {
+    overlay.style.height = '0px';
+    overlay.classList.remove('open');
   } else {
-    t = true;
-    document.getElementById("myNav").style.height = "0%";
+    overlay.style.height = overlay.scrollHeight + 'px';
+    overlay.classList.add('open');
   }
 }
+
 window.navToggle = navToggle;
 
 export function error_window(e) {

@@ -113,6 +113,7 @@
   width: clamp(32px, 95vw, 1323px);
   height: clamp(15px, 3vw, 40px);
   position: absolute;
+  left: 50%;
   transform: translateX(-50%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -136,23 +137,30 @@
   margin-right: 0.2em;
 }
 .overlay {
-  height: 0;
-  width: clamp(110px, 10vw, 170px);
-  position: absolute;
+  background-color: rgba(110, 110, 110, 0.884);
   overflow: hidden;
-  background-color: rgb(110, 110, 110);
-  overflow-y: visible;
-  right: clamp(-75px, 0vw, -65px);
-  top: clamp(15px, 6vh, 40px);
-  transition: 0.3s;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  height: 0;
+  transition: height 0.3s ease;
+}
+.overlay.open {
+  height: 100%;
 }
 .overlay-content {
   position: relative;
-  top: 10px;
-  width: 50%;
-  left: 5px;
+  width: 100%;
   white-space: nowrap;
+  margin: 1rem 0.6rem 1rem 0.6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .overlay a {
   padding: 4px;
@@ -178,7 +186,7 @@
   left: 5px;
 }
 .overlay .closebtn .group-45 {
-  width: 60px;
+  width: 100%;
   height: auto;
   display: block;
 }
