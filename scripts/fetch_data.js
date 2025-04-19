@@ -26,7 +26,6 @@ function updateDateTime() { // Updates time with proper formatting and changes t
 }
 
 export async function loadData(pos) { // This function allows for the time to be updated and the names and partylists to be updated.
-  await fetchData();
 
   for (let category in data_yml.settings) {
     for (let text in data_yml.settings.texts) {
@@ -253,6 +252,7 @@ export async function loadData(pos) { // This function allows for the time to be
 window.loadData = loadData;
 
 export async function fetchData() {
+  const API_KEY = '14c014e3ce179fac9464e7dc520e9bc0e71efb65cbe7d6d73a823487b10c5815';
   try {
     const response = await fetch('config.yml');
     const text = await response.text();
@@ -263,8 +263,14 @@ export async function fetchData() {
     error_window(error);
   }
   try {
-    const jsonResponse = await fetch('result.json');
+    const jsonResponse = await fetch('https://resulting-kill-vhs-ng.trycloudflare.com/request-latest-result', {
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`
+      }
+    });
+    if (!jsonResponse.ok) throw new Error('Unauthorized or error fetching');
     data_json = await jsonResponse.json();
+    data_json = await JSON.parse(data_json.data);
   } catch (error) {
     data_json = null;
     console.error('Error loading Data:', error);
