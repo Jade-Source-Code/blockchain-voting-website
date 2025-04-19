@@ -10,3 +10,5 @@ settings:
   sources:
     web_emblem: "assets/logo-emblem/mcm_emblem.png"
     eboto_emblem: "assets/logo-emblem/eboto_logo.png"
+  api:
+    api_key: "14c014e3ce179fac9464e7dc520e9bc0e71efb65cbe7d6d73a823487b10c5815"

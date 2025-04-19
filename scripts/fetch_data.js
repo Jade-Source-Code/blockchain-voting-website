@@ -250,7 +250,6 @@ export async function loadData(pos) { // This function allows for the time to be
 window.loadData = loadData;
 
 export async function fetchData() {
-  const API_KEY = '14c014e3ce179fac9464e7dc520e9bc0e71efb65cbe7d6d73a823487b10c5815';
   try {
     const response = await fetch('config.yml');
     const text = await response.text();
@@ -263,7 +262,7 @@ export async function fetchData() {
   try {
     const jsonResponse = await fetch('https://resulting-kill-vhs-ng.trycloudflare.com/request-latest-result', {
       headers: {
-        'Authorization': `Bearer ${API_KEY}`
+        'Authorization': `Bearer ${data_yml.settings.api[0]}`
       }
     });
     if (!jsonResponse.ok) throw new Error('Unauthorized or error fetching');
