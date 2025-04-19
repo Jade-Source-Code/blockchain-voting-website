@@ -5,7 +5,7 @@
 .main {
   background: #ffffff;
   width: 100%;
-  height: 1024px;
+  height: 100%;
   position: relative;
 }
 
@@ -41,10 +41,10 @@
   position: relative
 }
 .mmcm_emblem {
-  width: 90px;
-  height: 30px;
+  width: clamp(60px, 15vw, 198px);
+  height: clamp(20px, 7vw, 75px);
   position: absolute;
-  top: 0;
+  margin-top: 1rem;
   left: 5px;
   object-fit: cover;
   aspect-ratio: 264.49/100;
@@ -53,7 +53,7 @@
   width: clamp(30px, 10vw, 78.75px);
   height: clamp(30px, 10vw, 78.75px);
   position: absolute;
-  top: 0;
+  margin-top: 1rem;
   right: 5px;
   object-fit: cover;
   aspect-ratio: 178.5/105;
@@ -70,9 +70,7 @@
 .red_title_box {
   background: #e20e0e;
   width: clamp(100px, 50vw, 820px);
-  min-height: 25px;
-  max-height: 25px;
-  height: auto;
+  height: 30px;
   position: absolute;
   transform: translateX(-50%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -97,13 +95,13 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: calc(50% - 470px);
+  margin-top: 4rem;
   text-shadow: 2px 2px rgb(184, 184, 184);
 }
 
 /* Navigation Bar & Overlay */
 .nav_bar {
-  top: calc(50% - 440px);
+  margin-top: 8rem;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -113,47 +111,56 @@
 .nav_bar_grey {
   background: #969393;
   width: clamp(32px, 95vw, 1323px);
-  height: clamp(15px, 3vw, 40px);
+  height: 30px;
   position: absolute;
+  left: 50%;
   transform: translateX(-50%);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.nav_icon_and_position {
+  top: 0%;
+  transform: translateX(-50%);
+  left: 50%;
+  position: absolute;
+  display: inline-flex;
+  align-items: center;
+}
 .position_text {
   color: #ffffff;
-  text-align: center;
   font-family: "Montserrat-SemiBold", sans-serif;
   font-size: clamp(8px, 3vw, 32px);
   font-weight: 600;
-  position: absolute;
-  left:-40px;
-  top: 2.5px;
 }
 .nav_bar_icon {
   width: clamp(20px, 2vw, 30px);
   height: clamp(10px, 2vw, 23px);
-  position: absolute;
-  right: clamp(10px, 10vw, 70px);
-  top: clamp(2px, 1vw, 7.5px);
-  overflow: hidden;
+  margin-right: 0.2em;
 }
 .overlay {
-  height: 0;
-  width: clamp(110px, 10vw, 170px);
-  position: absolute;
+  background-color: rgba(110, 110, 110, 0.884);
   overflow: hidden;
-  background-color: rgb(110, 110, 110);
-  overflow-y: visible;
-  right: clamp(-75px, 0vw, -65px);
-  top: 15px;
-  transition: 0.3s;
   box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  height: 0;
+  transition: height 0.3s ease;
+}
+.overlay.open {
+  height: 100%;
 }
 .overlay-content {
   position: relative;
-  top: 10px;
-  width: 50%;
-  left: 5px;
+  width: 100%;
   white-space: nowrap;
+  margin: 1rem 0.6rem 1rem 0.6rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .overlay a {
   padding: 4px;
@@ -179,7 +186,7 @@
   left: 5px;
 }
 .overlay .closebtn .group-45 {
-  width: 60px;
+  width: 100%;
   height: auto;
   display: block;
 }
@@ -199,30 +206,48 @@
   cursor: pointer;
 }
 
+/* Graph and Stats */
+.graph_and_stats {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  width: clamp(250px, 95vw, 1280px);
+  padding-top: 170px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+}
+
 /* Background Image */
 .bg_image {
   opacity: 0.7;
   width: 90vw;
-  height: 400px;
+  height: 90%;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 10%;
+  top: calc(15% - 0px);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   object-fit: cover;
   aspect-ratio: 1200/686;
 }
 
-/* Candidate 1/Party list 1 */
-.candidate_1 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(50% - 400px);
-  width: clamp(250px, 95vw, 1280px);
-  height: clamp(10px, 15vw, 110px);
+/* Error Window */
+.error_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding-top: 170px;
 }
-.candidate_1_back_bar_white {
+.error_window {
+  width: clamp(250px, 95vw, 1280px);
+  height: clamp(100px, 15vw, 600px);
+  margin: 5px auto;
+  position: relative;
+}
+.error_window_back_bar_white {
   background: #ffffff;
   border-radius: 5px;
   opacity: 0.6;
@@ -233,94 +258,36 @@
   transform: translateX(-50%);
   box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.foreground_bar_1 {
-  transition: width 0.5s ease;
-  width: 0px;
-  height: 70%;
-  position: absolute;
-  background: #2D4B80;
-  overflow: hidden;
-  left: 23%;
-  top: 15%;
-}
-.foreground_bar_blue_percent_holder {
-  width: 11%;
-  height: 70%;
-  background: #2D4B80;
-  position: absolute;
-  overflow: hidden;
-  transform: translateX(-50%);
-  left: 93%;
-  top: 15%;
-}
-.foreground_bar_blue_text_holder {
-  width: 20%;
-  height: 70%;
-  background: #2D4B80;
-  position: absolute;
-  overflow: hidden;
-  left: clamp(1%, 10vw, 1%);
-  top: clamp(15%, 1vh, 15%);
-}
-.foreground_line_blue {
-  margin-top: -1px;
-  border-style: solid;
-  border-color: #646464;
-  border-width: 1px 0 0 0;
-  opacity: 0.65;
-  width: 50px;
-  height: 0px;
-  position: absolute;
-  right: 1.5%;
-  top: 12.5%;
-  transform-origin: 0 0;
-  transform: rotate(90deg) scale(1, 1);
-}
-.candidate_1_name_and_party_name {
-  text-align: left;
-  position: absolute;
-  left: 2%;
-  top: 20%;
-}
-.candidate_1_name {
+.error_window_text {
   animation: fadeInUp 1s ease-out;
-  color: #ffffff;
+  color: #ff0000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 35px;
   font-family: "AlfaSlabOne-Regular", sans-serif;
-  font-size: 7.5px;
-  line-height: 1px;
-  font-weight: 400;
-}
-.candidate_1_party_name {
-  animation: fadeInUp 1s ease-out;
-  color: #ffffff;
-  font-family: "Montserrat-Regular", sans-serif;
-  font-size: 5px;
-  line-height: 1px;
-  font-weight: 400;
-}
-.candidate_1_percentage {
-  color: #ffffff;
+  font-size: 24px;
   text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
-  font-size: 17.5px;
-  line-height: 35px;
-  font-weight: 600;
-  position: absolute;
-  width: 59px;
-  left: 85.5%;
-  top: 25%;
+  line-height: 21px;
+  font-weight: 400;
 }
 
-/* Candidate 2/Party list 2 */
-.candidate_2 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(50% - 325px);
-  width: clamp(250px, 95vw, 1280px);
-  height: clamp(10px, 15vw, 110px);
+/* Candidate Template */
+#candidates {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2.5rem;
 }
-.candidate_2_back_bar_white {
+.candidates_list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0;
+}
+.candidate_back_bar_white {
   background: #ffffff;
   border-radius: 5px;
   opacity: 0.6;
@@ -331,366 +298,201 @@
   transform: translateX(-50%);
   box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
-.foreground_bar_2 {
+.foreground_bar {
   transition: width 0.5s ease;
   width: 0px;
-  height: 70%;
+  height: 42.5px;
   position: absolute;
-  background: #9c1418;
   overflow: hidden;
-  left: 23%;
-  top: 15%;
+  left: 24.7%;
+  top: 10%;
 }
-.foreground_bar_red_percent_holder {
-  width: 11%;
-  height: 70%;
-  background: #9c1418;
+.foreground_bar_percent_holder {
+  width: 42.5px;
+  height: 42.5px;
   position: absolute;
   overflow: hidden;
   transform: translateX(-50%);
   left: 93%;
-  top: 15%;
+  top: 10%;
 }
-.foreground_bar_red_text_holder {
-  width: 20%;
-  height: 70%;
-  background: #9c1418;
+.foreground_bar_text_holder {
+  width: 75px;
+  height: 42.5px;
   position: absolute;
   overflow: hidden;
   left: clamp(1%, 10vw, 1%);
-  top: clamp(15%, 1vh, 15%);
+  top: 10%;
 }
-.foreground_line_red {
-  margin-top: -1px;
+.foreground_line {
   border-style: solid;
   border-color: #646464;
   border-width: 1px 0 0 0;
   opacity: 0.65;
-  width: 50px;
+  width: 12.5%;
   height: 0px;
   position: absolute;
   right: 1.5%;
-  top: 12.5%;
+  top: 10%;
   transform-origin: 0 0;
   transform: rotate(90deg) scale(1, 1);
 }
-.candidate_2_name_and_party_name {
+.candidate_name_and_party_name {
   text-align: left;
   position: absolute;
   left: 2%;
-  top: 20%;
+  top: 10%;
 }
-.candidate_2_name {
+.candidate_name {
   animation: fadeInUp 1s ease-out;
   color: #ffffff;
   font-family: "AlfaSlabOne-Regular", sans-serif;
-  font-size: 7.5px;
+  font-size: 7px;
   line-height: 1px;
-  font-weight: 400;
+  font-weight: 600;
 }
-.candidate_2_party_name {
+.candidate_party_name {
   animation: fadeInUp 1s ease-out;
   color: #ffffff;
   font-family: "Montserrat-Regular", sans-serif;
-  font-size: 5px;
+  font-size: 7px;
   line-height: 1px;
-  font-weight: 400;
+  font-weight: 200;
 }
-.candidate_2_percentage {
+.candidate_percentage {
   color: #ffffff;
   text-align: center;
   font-family: "Montserrat-SemiBold", sans-serif;
-  font-size: 17.5px;
+  font-size: 12.5px;
   line-height: 35px;
   font-weight: 600;
   position: absolute;
   width: 59px;
-  left: 85.5%;
-  top: 25%;
+  left: 84.5%;
+  top: 17%;
 }
-
-/* Candidate 3/Party list 3 */
-.candidate_3 {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(50% - 250px);
+.candidate {
   width: clamp(250px, 95vw, 1280px);
   height: clamp(10px, 15vw, 110px);
-}
-.candidate_3_back_bar_white {
-  background: #ffffff;
-  border-radius: 5px;
-  opacity: 0.6;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  box-shadow: 0px 4px 4px 4px rgba(0, 0, 0, 0.25);
-}
-.foreground_bar_3 {
-  transition: width 0.5s ease;
-  width: 0px;
-  height: 70%;
-  position: absolute;
-  background: #b5af00;
-  overflow: hidden;
-  left: 23%;
-  top: 15%;
-}
-.foreground_bar_yellow_percent_holder {
-  width: 11%;
-  height: 70%;
-  background: #b5af00;
-  position: absolute;
-  overflow: hidden;
-  transform: translateX(-50%);
-  left: 93%;
-  top: 15%;
-}
-.foreground_bar_yellow_text_holder {
-  width: 20%;
-  height: 70%;
-  background: #b5af00;
-  position: absolute;
-  overflow: hidden;
-  left: clamp(1%, 10vw, 1%);
-  top: clamp(15%, 1vh, 15%);
-}
-.foreground_line_yellow {
-  margin-top: -1px;
-  border-style: solid;
-  border-color: #646464;
-  border-width: 1px 0 0 0;
-  opacity: 0.65;
-  width: 50px;
-  height: 0px;
-  position: absolute;
-  right: 1.5%;
-  top: 12.5%;
-  transform-origin: 0 0;
-  transform: rotate(90deg) scale(1, 1);
-}
-.candidate_3_name_and_party_name {
-  text-align: left;
-  position: absolute;
-  left: 2%;
-  top: 20%;
-}
-.candidate_3_name {
-  animation: fadeInUp 1s ease-out;
-  color: #ffffff;
-  font-family: "AlfaSlabOne-Regular", sans-serif;
-  font-size: 7.5px;
-  line-height: 1px;
-  font-weight: 400;
-}
-.candidate_3_party_name {
-  animation: fadeInUp 1s ease-out;
-  color: #ffffff;
-  font-family: "Montserrat-Regular", sans-serif;
-  font-size: 5px;
-  line-height: 1px;
-  font-weight: 400;
-}
-.candidate_3_percentage {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Montserrat-SemiBold", sans-serif;
-  font-size: 17.5px;
-  line-height: 35px;
-  font-weight: 600;
-  position: absolute;
-  width: 59px;
-  left: 85.5%;
-  top: 25%;
+  margin: 5px auto;
+  position: relative;
 }
 
-/* Candidates Stats */
-.candidates_bottom_stats {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: calc(50% - 150px);
-  width: clamp(250px, 95vw, 1280px);
-  height: clamp(100px, 50vw, 233px);
-}
+/* Candidates Stats Template */
 .candidates_bottom_back_bar_white {
-  background: rgb(255, 255, 255);
-  border-radius: 5px;
-  opacity: 0.6;
-  width: 100%;
-  height: 80%;
-  position: absolute;
+  position: relative;
+  width: clamp(250px, 95vw, 1280px);
   left: 50%;
   transform: translateX(-50%);
   box-shadow: 0px 8px 8px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  gap: 1rem;
+}
+.candidates_bottom_back_bar_white::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  opacity: 0.6;
+  z-index: 0;
+}
+.candidates_bottom_back_bar_white > * {
+  position: relative;
+  z-index: 1;
 }
 .vote_count_per_candidate {
   color: #6f6b6b;
   text-align: center;
   font-family: "Montserrat-Medium", sans-serif;
-  font-size: 17px;
+  font-size: 120%;
   font-weight: 500;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 1%;
+  position: relative;
+  z-index: 1;
+  margin-top: 1rem;
 }
 .datetime {
   color: #6f6b6b;
   text-align: center;
   font-family: "Montserrat-Regular", sans-serif;
-  font-size: 10px;
+  font-size: 70%;
   font-weight: 400;
+  position: relative;
+  z-index: 1;
+  margin-bottom: 1rem;
+}
+.candidates_boxes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 2.7rem;
+  column-gap: 0.6rem;
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  flex-direction: row;
+  margin-top: 0.5rem;
+}
+/* Candidate Box */
+.candidate_stats {
+  width: 40%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.candidate_box {
+  width: 100%;
+  height: 190%;
   position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 10%;
-  width: 208px;
-  height: 20.52px;
 }
-
-/* Candidate 1 Stats */
-.candidate_1_stats {
-  width: 100px;
-  height: 100px;
-  position: static;
-}
-.candidate_1_box_blue {
-  background: #2d4b80;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 7.5%;
-  top: 25%;
-}
-.candidate_1_stats_percentage {
+.candidate_stats_percentage {
+  position: relative;
   color: #ffffff;
   text-align: center;
   font-family: "AlfaSlabOne-Regular", sans-serif;
-  font-size: 20px;
+  font-size: 100%;
   font-weight: 400;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 21%;
-  top: 40%;
 }
-.candidate_1_stats_counter {
+.candidate_stats_counter {
+  position: relative;
   color: #ffffff;
   text-align: center;
   font-family: "Montserrat-Regular", sans-serif;
-  font-size: 10px;
+  font-size: 100%;
   font-weight: 400;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 21%;
-  top: 55%;
-}
-
-/* Candidate 2 Stats */
-.candidate_2_stats {
-  width: 100px;
-  height: 100px;
-  position: static;
-}
-.candidate_2_box_red {
-  background: #9c1418;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 25%;
-}
-.candidate_2_stats_percentage {
-  color: #ffffff;
-  text-align: center;
-  font-family: "AlfaSlabOne-Regular", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 40%;
-}
-.candidate_2_stats_counter {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Montserrat-Regular", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 55%;
-}
-
-/* Candidate 3 Stats */
-.candidate_3_stats {
-  width: 100px;
-  height: 100px;
-  position: static;
-}
-.candidate_3_box_yellow {
-  background: #b5af00;
-  width: 100px;
-  height: 100px;
-  position: absolute;
-  left: 66.8%;
-  top: 25%;
-}
-.candidate_3_stats_percentage {
-  color: #ffffff;
-  text-align: center;
-  font-family: "AlfaSlabOne-Regular", sans-serif;
-  font-size: 20px;
-  font-weight: 400;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 80%;
-  top: 40%;
-}
-.candidate_3_stats_counter {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Montserrat-Regular", sans-serif;
-  font-size: 10px;
-  font-weight: 400;
-  position: absolute;
-  transform: translateX(-50%);
-  left: 80%;
-  top: 55%;
 }
 
 /* Bottom Bar */
 .bottom_bar {
   width: 100%;
-  position: static;
-}
-.bottom_bar_box {
+  position: relative;
   background: #737373;
-  width: 100%;
-  height: clamp(90px, 50vh, 120px);
-  position: absolute;
-  bottom: 0px;
+  height: clamp(90px, 50vh, 160px);
+  margin-top: 20rem;
+  padding: 1rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .address {
   color: #ffffff;
-  text-align: left;
   font-family: "Montserrat-Regular", sans-serif;
   font-size: clamp(1px, 3vw, 15px);
   font-weight: 400;
-  position: absolute;
-  left: 20px;
-  bottom: 40px;
 }
 .mcm_emblem_lightscale {
   width: clamp(50px, 10vw, 80px);
-  position: absolute;
-  right: 5%;
-  bottom: 25px;
   object-fit: cover;
   aspect-ratio: 881/1024;
 }

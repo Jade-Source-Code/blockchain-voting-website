@@ -1,6 +1,7 @@
 import { animateVoteCount } from "./generic.js";
 import { capitalize } from "./generic.js";
 import { error_window } from "./generic.js";
+import { isMobile } from "./generic.js";
 
 let data_yml = {};
 let data_json = {};
@@ -93,7 +94,9 @@ export async function loadData(pos) { // This function allows for the time to be
           }
         }
         const partylistData = data_json.partylists[party];
-        const barWidth = Math.round((count / data_json.settings.partylist_maxvote) * 850) + "px";
+        let barWidth = "0px"
+        if (isMobile) {barWidth = Math.round((count / data_json.settings.partylist_maxvote) * (window.innerWidth / 1.73)) + "px";}
+        else {barWidth = Math.round((count / data_json.settings.partylist_maxvote) * 850) + "px";}
         const votePercent = Math.round((count / data_json.settings.partylist_maxvote) * 100);
         const candidateDiv = document.createElement('div');
         candidateDiv.className = 'candidate';
@@ -144,11 +147,9 @@ export async function loadData(pos) { // This function allows for the time to be
         const candidateBoxDiv = document.createElement('div');
         candidateBoxDiv.className = 'candidate_stats';
         candidateBoxDiv.innerHTML = `
-          <div class="candidate_stats">
-            <div class="candidate_box" style="background: ${partylistData.color};"></div>
-            <div class="candidate_stats_percentage">0%</div>
-            <div class="candidate_stats_counter">0 / 0</div>
-          </div>
+          <div class="candidate_box" style="background: ${partylistData.color};"></div>
+          <div class="candidate_stats_percentage">0%</div>
+          <div class="candidate_stats_counter">0 / 0</div>
         `;
 
         containerBoxesDiv.appendChild(candidateBoxDiv);
@@ -170,7 +171,9 @@ export async function loadData(pos) { // This function allows for the time to be
       for (let index = 0; index < data_json.position[pos].candidates.length; index++) {
         const candidateData = data_json.position[pos].candidates[index];
         const partylistData = data_json.partylists[candidateData.partylist];
-        const barWidth = Math.round((candidateData.voteCount / data_json.settings.candidate_maxvote) * 850) + "px";
+        let barWidth = "0px"
+        if (isMobile) {barWidth = Math.round((candidateData.voteCount / data_json.settings.candidate_maxvote) * (window.innerWidth / 1.73)) + "px";}
+        else {barWidth = Math.round((candidateData.voteCount / data_json.settings.candidate_maxvote) * 850) + "px";}
         const votePercent = Math.round((candidateData.voteCount / data_json.settings.candidate_maxvote) * 100);
         const candidateDiv = document.createElement('div');
         candidateDiv.className = 'candidate';
@@ -213,11 +216,9 @@ export async function loadData(pos) { // This function allows for the time to be
         const candidateBoxDiv = document.createElement('div');
         candidateBoxDiv.className = 'candidate_stats';
         candidateBoxDiv.innerHTML = `
-          <div class="candidate_stats">
-            <div class="candidate_box" style="background: ${partylistData.color};"></div>
-            <div class="candidate_stats_percentage">0%</div>
-            <div class="candidate_stats_counter">0 / 0</div>
-          </div>
+          <div class="candidate_box" style="background: ${partylistData.color};"></div>
+          <div class="candidate_stats_percentage">0%</div>
+          <div class="candidate_stats_counter">0 / 0</div>
         `;
 
         containerBoxesDiv.appendChild(candidateBoxDiv);
@@ -262,7 +263,7 @@ export async function fetchData() {
     error_window(error);
   }
   try {
-    const jsonResponse = await fetch("result.json");
+    const jsonResponse = await fetch('result.json');
     data_json = await jsonResponse.json();
   } catch (error) {
     data_json = null;

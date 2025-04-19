@@ -9,7 +9,7 @@ export const capitalize = (str, lower = false) =>
     .replace(/-/g, ' ') // Replace hyphens with spaces
     .replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
 
-const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+export const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   
 if (isMobile) {
   document.getElementById("main-style").href = "stylesheets/mobile.css";

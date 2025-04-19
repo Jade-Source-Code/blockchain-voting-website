@@ -413,6 +413,7 @@
   font-weight: 500;
   position: relative;
   z-index: 1;
+  margin-top: 1rem;
 }
 .datetime {
   color: #6f6b6b;
@@ -422,6 +423,7 @@
   font-weight: 400;
   position: relative;
   z-index: 1;
+  margin-bottom: 1rem;
 }
 .candidates_boxes {
   display: flex;
