@@ -1,5 +1,6 @@
 import { loadData } from "./fetch_data.js";
 import { fetchData } from "./fetch_data.js";
+import { updateDateTime } from "./fetch_data.js";
 
 let navBool = true;
 
@@ -78,7 +79,9 @@ export function animateVoteCount(path, targetCount, length, context) {
   requestAnimationFrame(update);
 }
 
+await updateDateTime();
 await fetchData();
 await loadData("partylist");
+setInterval(async () => await updateDateTime, 60000 * 5);
 setInterval(async () => await loadData(currentPos), 60000 * 5);
-setInterval(async () => await fetchData(currentPos), 60000 * 5);
+setInterval(async () => await fetchData, 60000 * 5);

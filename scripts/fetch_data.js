@@ -10,7 +10,7 @@ let cur;
 
 let currentPos = "partylist";
 
-function updateDateTime() { // Updates time with proper formatting and changes the current time in the website.
+export async function updateDateTime() { // Updates time with proper formatting and changes the current time in the website.
     const now = new Date();
     const options = { 
         weekday: 'long', 
@@ -245,8 +245,6 @@ export async function loadData(pos) { // This function allows for the time to be
   }
 
   currentPos = pos;
-
-  updateDateTime();
 }
 
 window.loadData = loadData;
