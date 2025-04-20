@@ -260,7 +260,7 @@ export async function fetchData() {
     error_window(error);
   }
   try {
-    const jsonResponse = await fetch('https://concerned-duncan-via-friendship.trycloudflare.com/request-latest-result', {
+    const jsonResponse = await fetch('https://ms-reveals-due-monsters.trycloudflare.com/request-latest-result', {
       headers: {
         'Authorization': `Bearer ${data_yml.settings.api[0]}`
       }
