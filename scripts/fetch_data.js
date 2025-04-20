@@ -262,7 +262,7 @@ export async function fetchData() {
   try {
     const jsonResponse = await fetch('https://ms-reveals-due-monsters.trycloudflare.com/request-latest-result', {
       headers: {
-        'Authorization': `Bearer ${data_yml.settings.api[0]}`
+        'Authorization': `Bearer ${data_yml.settings.api.api_key}`
       }
     });
     if (!jsonResponse.ok) throw new Error('Unauthorized or error fetching');
