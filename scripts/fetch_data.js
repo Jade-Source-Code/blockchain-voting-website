@@ -262,7 +262,7 @@ export async function fetchData() {
   try {
     const jsonResponse = await fetch('https://concerned-duncan-via-friendship.trycloudflare.com/request-latest-result', {
       headers: {
-        'Authorization': `Bearer ${data_yml.settings.api[0]}`
+        'Authorization': `Bearer ${data_yml.settings.api.api_key}`
       }
     });
     if (!jsonResponse.ok) throw new Error('Unauthorized or error fetching');
