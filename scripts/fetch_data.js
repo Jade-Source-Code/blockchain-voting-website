@@ -260,7 +260,7 @@ export async function fetchData() {
     error_window(error);
   }
   try {
-    const jsonResponse = await fetch('https://avon-gage-purse-dot.trycloudflare.com/request-latest-result', {
+    const jsonResponse = await fetch('https://worse-many-afternoon-miami.trycloudflare.com/request-latest-result', {
       headers: {
         'Authorization': `Bearer ${data_yml.settings.api.api_key}`
       }
